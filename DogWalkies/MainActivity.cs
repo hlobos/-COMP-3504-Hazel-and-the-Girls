@@ -11,7 +11,7 @@ namespace DogWalkies
     [Activity(Label = "DogWalkies", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
+        int count = 1;//cool
 
         protected override void OnCreate(Bundle bundle)
         {

@@ -2,3 +2,7 @@ DogWalkies.MainActivity, DogWalkies;md5bb60802a59fb0f95c9bfbb66ffd35aad.MainActi
 DogWalkies.MainActivity, DogWalkies, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5bb60802a59fb0f95c9bfbb66ffd35aad.MainActivity
 DogWalkies.MainActivity;md5bb60802a59fb0f95c9bfbb66ffd35aad.MainActivity
 dogwalkies.MainActivity;md5bb60802a59fb0f95c9bfbb66ffd35aad.MainActivity
+DogWalkies.MetricsActivity, DogWalkies;md5bb60802a59fb0f95c9bfbb66ffd35aad.MetricsActivity
+DogWalkies.MetricsActivity, DogWalkies, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5bb60802a59fb0f95c9bfbb66ffd35aad.MetricsActivity
+DogWalkies.MetricsActivity;md5bb60802a59fb0f95c9bfbb66ffd35aad.MetricsActivity
+dogwalkies.MetricsActivity;md5bb60802a59fb0f95c9bfbb66ffd35aad.MetricsActivity

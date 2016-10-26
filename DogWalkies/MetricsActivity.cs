@@ -20,6 +20,7 @@ namespace DogWalkies
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            // okay
         }
     }
 }

@@ -11,6 +11,7 @@ namespace DogWalkies
     [Activity(Label = "DogWalkies", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
+        //START: 'master' branch
         //Switch to: SYNC, sync your master branch (make sure all is up-to-date)
         //Switch to: BRANCHES, double-click your 'develop' branch MAKE YOUR CHANGES HERE
         //Switch to: CHANGES, type in your commit comment > Commit All and Push

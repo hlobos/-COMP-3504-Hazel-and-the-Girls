@@ -2,8 +2,8 @@
 DogWalkies - Mobile, Android App Development
 
 # Authors
-Hazel Lobos
-Marina Vu
+Hazel Lobos,
+Marina Vu,
 Umida Parhaut
 
 # Project Description

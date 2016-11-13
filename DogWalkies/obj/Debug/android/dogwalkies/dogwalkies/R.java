@@ -28,18 +28,19 @@ public final class R {
         public static final int sheltiemainview=0x7f02000e;
     }
     public static final class id {
-        public static final int ButtonProfile=0x7f050007;
-        public static final int ButtonStartWalk=0x7f050008;
-        public static final int ImageButtonAddDogProfileImage=0x7f050006;
-        public static final int ImageButtonCamera=0x7f05000a;
-        public static final int ImageViewDWIcon=0x7f050003;
-        public static final int ImageViewDWLogo=0x7f05000b;
-        public static final int ImageViewPawPrintIcon=0x7f050001;
-        public static final int ImageViewSheltie=0x7f050005;
-        public static final int RelativeLayoutCameraBar=0x7f050009;
-        public static final int RelativeLayoutDogNameBar=0x7f050000;
-        public static final int RelativeLayoutDogProfileBar=0x7f050004;
-        public static final int TextViewDogFirstName=0x7f050002;
+        public static final int ButtonProfile=0x7f050008;
+        public static final int ButtonStartWalk=0x7f050009;
+        public static final int ImageButtonAddDogProfileImage=0x7f050007;
+        public static final int ImageButtonCamera=0x7f05000b;
+        public static final int ImageViewDWIcon=0x7f050004;
+        public static final int ImageViewDWLogo=0x7f05000c;
+        public static final int ImageViewPawPrintIcon=0x7f050002;
+        public static final int ImageViewSheltie=0x7f050006;
+        public static final int RelativeLayoutCameraBar=0x7f05000a;
+        public static final int RelativeLayoutDogNameBar=0x7f050001;
+        public static final int RelativeLayoutDogProfileBar=0x7f050005;
+        public static final int TextViewDogFirstName=0x7f050003;
+        public static final int mainScrollView=0x7f050000;
     }
     public static final class layout {
         public static final int main=0x7f030000;

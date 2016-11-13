@@ -5,7 +5,7 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <application android:label="DogWalkies" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon" android:debuggable="true">
-    <activity android:icon="@drawable/icon" android:label="DogWalkies" android:name="md5bb60802a59fb0f95c9bfbb66ffd35aad.MainActivity">
+    <activity android:icon="@drawable/icon" android:label="DogWalkies" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:name="md5bb60802a59fb0f95c9bfbb66ffd35aad.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

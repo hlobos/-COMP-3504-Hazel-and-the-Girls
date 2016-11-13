@@ -102,41 +102,44 @@ namespace DogWalkies
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050007
-			public const int ButtonProfile = 2131034119;
-			
 			// aapt resource value: 0x7f050008
-			public const int ButtonStartWalk = 2131034120;
-			
-			// aapt resource value: 0x7f050006
-			public const int ImageButtonAddDogProfileImage = 2131034118;
-			
-			// aapt resource value: 0x7f05000a
-			public const int ImageButtonCamera = 2131034122;
-			
-			// aapt resource value: 0x7f050003
-			public const int ImageViewDWIcon = 2131034115;
-			
-			// aapt resource value: 0x7f05000b
-			public const int ImageViewDWLogo = 2131034123;
-			
-			// aapt resource value: 0x7f050001
-			public const int ImageViewPawPrintIcon = 2131034113;
-			
-			// aapt resource value: 0x7f050005
-			public const int ImageViewSheltie = 2131034117;
+			public const int ButtonProfile = 2131034120;
 			
 			// aapt resource value: 0x7f050009
-			public const int RelativeLayoutCameraBar = 2131034121;
+			public const int ButtonStartWalk = 2131034121;
 			
-			// aapt resource value: 0x7f050000
-			public const int RelativeLayoutDogNameBar = 2131034112;
+			// aapt resource value: 0x7f050007
+			public const int ImageButtonAddDogProfileImage = 2131034119;
+			
+			// aapt resource value: 0x7f05000b
+			public const int ImageButtonCamera = 2131034123;
 			
 			// aapt resource value: 0x7f050004
-			public const int RelativeLayoutDogProfileBar = 2131034116;
+			public const int ImageViewDWIcon = 2131034116;
+			
+			// aapt resource value: 0x7f05000c
+			public const int ImageViewDWLogo = 2131034124;
 			
 			// aapt resource value: 0x7f050002
-			public const int TextViewDogFirstName = 2131034114;
+			public const int ImageViewPawPrintIcon = 2131034114;
+			
+			// aapt resource value: 0x7f050006
+			public const int ImageViewSheltie = 2131034118;
+			
+			// aapt resource value: 0x7f05000a
+			public const int RelativeLayoutCameraBar = 2131034122;
+			
+			// aapt resource value: 0x7f050001
+			public const int RelativeLayoutDogNameBar = 2131034113;
+			
+			// aapt resource value: 0x7f050005
+			public const int RelativeLayoutDogProfileBar = 2131034117;
+			
+			// aapt resource value: 0x7f050003
+			public const int TextViewDogFirstName = 2131034115;
+			
+			// aapt resource value: 0x7f050000
+			public const int mainScrollView = 2131034112;
 			
 			static Id()
 			{

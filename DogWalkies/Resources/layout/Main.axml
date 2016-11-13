@@ -3,32 +3,108 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#254C53">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minHeight="35dp"
+    android:background="#152B2F">
+    
+	<RelativeLayout
+        android:maxHeight="60dp"
+		android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1"
-        android:background="#050119" />
+        android:id="@+id/RelativeLayoutDogNameBar"
+        android:background="#050119">
+		<ImageView
+			android:src="@drawable/pawIcon"
+			android:layout_width="54dp"
+			android:layout_height="54dp"
+			android:id="@+id/ImageViewPawPrintIcon" />
+		<TextView
+			android:text="Rover"
+			android:textSize="40dp"
+			android:textColor="#BAD1C9"
+			android:layout_width="200dp"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="60dp"
+			android:id="@+id/TextViewDogFirstName" />
+		<ImageView
+			android:src="@drawable/Icon"
+			android:layout_width="54dp"
+			android:layout_height="54dp"
+			android:layout_alignParentRight="true"
+			android:id="@+id/ImageViewDWIcon" />
+	</RelativeLayout>
+	
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RelativeLayoutDogProfileBar"
+        android:background="#050119">
+		<ImageView
+			android:src="@drawable/sheltieMainView"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:maxHeight="500dp"
+			android:minHeight="500dp"
+			android:adjustViewBounds="true"
+			android:scaleType="fitXY"
+			android:id="@+id/ImageViewSheltie" />
+		<ImageButton
+			android:src="@drawable/addcircleIcon"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_marginTop="350dp"
+			android:layout_alignParentRight="true"
+			android:background="@null"
+			android:id="@+id/ImageButtonAddDogProfileImage" />
+	</RelativeLayout>
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minHeight="10dp"
+		android:background="#050119">
+	</LinearLayout>
+
     <Button
-        android:text="Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button1" />
+        android:text="Profile"
+        android:textColor="#FFD9D9"
+		android:textSize="30sp"
+		android:layout_width="270dp"
+		android:layout_height="60dp"
+		android:layout_gravity="center"
+		android:layout_margin="10dp"
+		android:background="@drawable/button" 
+        android:id="@+id/ButtonProfile" />
     <Button
-        android:text="Button"
+        android:text="Start Walk"
+        android:textColor="#FFD9D9"
+		android:textSize="30sp"
+		android:layout_width="270dp"
+		android:layout_height="60dp"
+		android:layout_gravity="center"
+		android:layout_margin="10dp"
+		android:background="@drawable/button" 
+        android:id="@+id/ButtonStartWalk" />
+    
+	<RelativeLayout
+		android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button2" />
-    <ImageButton
-        android:src="@android:drawable/ic_menu_gallery"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton1" />
-    <ImageView
-        android:src="@drawable/DogWalkiesLogo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView1" />
+        android:id="@+id/RelativeLayoutCameraBar"
+        android:background="#152B2F">
+		<ImageButton
+			android:src="@drawable/cameraIcon"
+			android:layout_width="100dp"
+			android:layout_height="100dp"
+			android:layout_centerHorizontal="true"
+			android:background="@null"
+			android:id="@+id/ImageButtonCamera" />
+		<ImageView
+			android:src="@drawable/DogWalkiesLogo"
+			android:layout_width="205dp"
+			android:layout_height="205dp"
+			android:layout_margin="5dp"
+			android:layout_alignParentRight="true"
+			android:id="@+id/ImageViewDWLogo" />
+	</RelativeLayout>
 </LinearLayout>

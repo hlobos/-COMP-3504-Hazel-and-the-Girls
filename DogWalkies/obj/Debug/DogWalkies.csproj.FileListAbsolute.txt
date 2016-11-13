@@ -25,6 +25,9 @@ C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\res\values\strings.xml
 C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\res\drawable\icon.png
 C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\res\drawable\dogwalkieslogo.png
 C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\res\drawable\sheltiemainview.jpg
+C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\res\drawable\cameraicon.png
+C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\res\drawable\pawicon.png
+C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\res\drawable\addicon.png
 C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\R.cs.flag
 C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\uploadflags.txt
 C:\Users\Illucien\Desktop\appHazel\DogWalkies\bin\Debug\DogWalkies.dll.mdb
@@ -51,3 +54,7 @@ C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\android\assets\System.Ru
 C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
+C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\res\drawable\buttonenabled.xml
+C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\res\drawable\button.xml
+C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\res\drawable\buttonpressed.xml
+C:\Users\Illucien\Desktop\appHazel\DogWalkies\obj\Debug\res\drawable\addcircleicon.png

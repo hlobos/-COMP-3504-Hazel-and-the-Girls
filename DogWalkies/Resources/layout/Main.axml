@@ -100,7 +100,7 @@
         android:id="@+id/RelativeLayoutCameraBar"
         android:background="#152B2F">
 		<ImageButton
-			android:src="@drawable/cameraIcon"
+			android:src="@drawable/buttonCamera"
 			android:layout_width="100dp"
 			android:layout_height="100dp"
 			android:layout_centerHorizontal="true"

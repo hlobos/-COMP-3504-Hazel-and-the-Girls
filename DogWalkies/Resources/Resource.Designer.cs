@@ -51,43 +51,49 @@ namespace DogWalkies
 			public const int button = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int buttonEnabled = 2130837506;
+			public const int buttonCamera = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int buttonPressed = 2130837507;
+			public const int buttonEnabled = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int cameraIcon = 2130837508;
+			public const int buttonPressed = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int DogWalkiesLogo = 2130837509;
+			public const int cameraIcon = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int draftIcon = 2130837510;
+			public const int cameraIconPressed = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int editIcon = 2130837511;
+			public const int DogWalkiesLogo = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int editIcon2 = 2130837512;
+			public const int draftIcon = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int homeIcon = 2130837513;
+			public const int editIcon = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int Icon = 2130837514;
+			public const int editIcon2 = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int imageIcon = 2130837515;
+			public const int homeIcon = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int infoIcon = 2130837516;
+			public const int Icon = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int pawIcon = 2130837517;
+			public const int imageIcon = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int sheltieMainView = 2130837518;
+			public const int infoIcon = 2130837518;
+			
+			// aapt resource value: 0x7f02000f
+			public const int pawIcon = 2130837519;
+			
+			// aapt resource value: 0x7f020010
+			public const int sheltieMainView = 2130837520;
 			
 			static Drawable()
 			{

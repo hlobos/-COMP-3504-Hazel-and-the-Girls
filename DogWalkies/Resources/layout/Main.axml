@@ -44,14 +44,11 @@
         android:id="@+id/RelativeLayoutDogProfileBar"
         android:background="#050119">
 		<ImageView
-			android:src="@drawable/sheltieMainView"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:maxHeight="500dp"
-			android:minHeight="500dp"
+			android:layout_width="fill_parent"
+			android:layout_height="400dp"
 			android:adjustViewBounds="true"
 			android:scaleType="fitXY"
-			android:id="@+id/ImageViewSheltie" />
+			android:id="@+id/ImageViewDogProfile" />
 		<ImageButton
 			android:src="@drawable/addcircleIcon"
 			android:layout_width="48dp"

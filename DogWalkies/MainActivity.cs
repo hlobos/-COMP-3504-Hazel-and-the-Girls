@@ -138,7 +138,7 @@ namespace DogWalkies
 
         private void ProfileButton_Click(object sender, EventArgs e)
         {
-            //Profile
+            StartActivity(typeof(ProfileActivity));
         }
 
     }

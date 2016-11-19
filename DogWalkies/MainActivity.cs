@@ -121,8 +121,10 @@ namespace DogWalkies
             }
             */
 
+            if (requestCode == 0 && resultCode == Result.Ok) {
                 //Toast the User about the Saved Image
                 string msg = "Image Saved to Gallery";
+                Toast.MakeText(this, msg, ToastLength.Short).Show();
             }
             
             // Dispose of the Java side bitmap.

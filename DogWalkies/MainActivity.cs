@@ -121,10 +121,10 @@ namespace DogWalkies
             }
             */
 
-            //Toast the User about the Saved Image
-            string msg = "Image Saved to Gallery";
-            Toast.MakeText(this, msg, ToastLength.Short).Show();
-
+                //Toast the User about the Saved Image
+                string msg = "Image Saved to Gallery";
+            }
+            
             // Dispose of the Java side bitmap.
             GC.Collect();
         }

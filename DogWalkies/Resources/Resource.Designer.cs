@@ -108,6 +108,9 @@ namespace DogWalkies
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050023
+			public const int ButtonMetrics = 2131034147;
+			
 			// aapt resource value: 0x7f050008
 			public const int ButtonProfile = 2131034120;
 			
@@ -156,8 +159,8 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050022
 			public const int button2 = 2131034146;
 			
-			// aapt resource value: 0x7f050023
-			public const int button3 = 2131034147;
+			// aapt resource value: 0x7f050024
+			public const int button3 = 2131034148;
 			
 			// aapt resource value: 0x7f050015
 			public const int editText1 = 2131034133;

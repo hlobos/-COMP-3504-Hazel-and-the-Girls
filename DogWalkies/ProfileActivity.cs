@@ -1,6 +1,8 @@
+using System;
 using Android.App;
 using Android.OS;
 using Android.Views;
+using Android.Widget;
 
 namespace DogWalkies
 {
@@ -15,6 +17,19 @@ namespace DogWalkies
 
             //Don't automatically popup the android keyboard when activity starts
             Window.SetSoftInputMode(SoftInput.StateHidden);
+
+            initializeClickEvents();
+        }
+
+        private void initializeClickEvents()
+        {
+            Button metricsButton = FindViewById<Button>(Resource.Id.ButtonMetrics);
+            metricsButton.Click += MetricsButton_Click;
+        }
+
+        private void MetricsButton_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(MetricsActivity));
         }
     }
 }

@@ -50,7 +50,7 @@
             android:text="Metrics"
             android:layout_width="188.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/button2" />
+            android:id="@+id/ButtonMetrics" />
     </LinearLayout>
     <EditText
         android:layout_width="match_parent"

@@ -12,15 +12,14 @@ using Android.Widget;
 
 namespace DogWalkies
 {
-    [Activity(Label = "MetricsActivity")]
+    [Activity(Label = "DogWalkies", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Material.Light.NoActionBar")]
     public class MetricsActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            // Create your application here
-            // okay
+            SetContentView(Resource.Layout.Metrics);
         }
     }
 }

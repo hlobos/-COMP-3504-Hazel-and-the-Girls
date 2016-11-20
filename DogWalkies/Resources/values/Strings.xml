@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ApplicationName">DogWalkies</string>
+    <string name="GeneralError">Unable to Complete Action</string>
+    <string name="SavedToGallery">Image Saved to Gallery</string>
 </resources>

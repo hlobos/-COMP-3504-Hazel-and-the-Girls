@@ -21,6 +21,8 @@ namespace DogWalkies
         public static File _dir;
         public static Bitmap bitmap;
         private ImageView dogProfileImageView;
+        private int REQUEST_PICK_IMAGE = 1;
+        private int REQUEST_TAKE_IMAGE = 2;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -31,16 +33,6 @@ namespace DogWalkies
             initializeFontStyle();
             initializeDogProfileImage();
             initializeClickEvents();
-
-            if (IsThereAnAppToTakePictures())
-            {
-                CreateDirectoryForPictures();
-
-                ImageButton addDogProfileImage = FindViewById<ImageButton>(Resource.Id.ImageButtonAddDogProfileImage);
-                ImageButton camera = FindViewById<ImageButton>(Resource.Id.ImageButtonCamera);
-                camera.Click += TakeAPicture;
-                addDogProfileImage.Click += TakeAPicture;
-            }
         }
 
         private void CreateDirectoryForPictures()
@@ -63,7 +55,7 @@ namespace DogWalkies
 
         private void initializeDogProfileImage()
         {
-            //Programatically set the default dog profile image
+            //Programmatically set the default dog profile image
             dogProfileImageView = FindViewById<ImageView>(Resource.Id.ImageViewDogProfile);
             dogProfileImageView.SetBackgroundResource(Resource.Drawable.dogProfileImageMainView);
         }
@@ -75,6 +67,18 @@ namespace DogWalkies
 
             Button startWalkButton = FindViewById<Button>(Resource.Id.ButtonStartWalk);
             startWalkButton.Click += StartWalkButton_Click;
+
+            if (IsThereAnAppToTakePictures())
+            {
+                CreateDirectoryForPictures();
+
+                ImageButton addDogProfileImage = FindViewById<ImageButton>(Resource.Id.ImageButtonAddDogProfileImage);
+                addDogProfileImage.Click += GrabAPictureFromGallery;
+
+                ImageButton camera = FindViewById<ImageButton>(Resource.Id.ImageButtonCamera);
+                camera.Click += TakeAPicture;
+
+            }
         }
 
         private void initializeFontStyle()
@@ -90,43 +94,51 @@ namespace DogWalkies
             TVDogFirstName.SetTypeface(centuryGothic, TypefaceStyle.Normal);
         }
 
+        private void GrabAPictureFromGallery(object sender, EventArgs e)
+        {
+            Intent intent = new Intent();
+            intent.SetType("image/*");
+            intent.SetAction(Intent.ActionGetContent);
+            StartActivityForResult(Intent.CreateChooser(intent, "Select Picture"), REQUEST_PICK_IMAGE);
+        }
+
         private void TakeAPicture(object sender, EventArgs e)
         {
             Intent intent = new Intent(MediaStore.ActionImageCapture);
             _file = new File(_dir, string.Format("DogWalkies_{0}.jpg", Guid.NewGuid()));
             intent.PutExtra(MediaStore.ExtraOutput, Uri.FromFile(_file));
-            StartActivityForResult(intent, 0);
+            StartActivityForResult(intent, REQUEST_TAKE_IMAGE);
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
 
-            // Make it available in the gallery
-            Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
-            Uri contentUri = Uri.FromFile(_file);
-            mediaScanIntent.SetData(contentUri);
-            SendBroadcast(mediaScanIntent);
-
-            // Display in the dogProfileImageView. 
-            // We will resize the bitmap to fit the display.
-            /*
-            int height = Resources.DisplayMetrics.HeightPixels;
-            int width = dogProfileImageView.Height;
-            bitmap = _file.Path.LoadAndResizeBitmap(width, height);
-            if (bitmap != null)
-            {
-                dogProfileImageView.SetImageBitmap(bitmap);
-                bitmap = null;
-            }
-            */
-
-            if (requestCode == 0 && resultCode == Result.Ok) {
-                //Toast the User about the Saved Image
-                string msg = "Image Saved to Gallery";
-                Toast.MakeText(this, msg, ToastLength.Short).Show();
+            if (requestCode == REQUEST_PICK_IMAGE) {
+                if (data == null) {
+                    Toast.MakeText(this, GetText(Resource.String.GeneralError), ToastLength.Short).Show();
+                }
+                else {
+                    // Display image in the dogProfileImageView.
+                    if (resultCode == Result.Ok) {
+                        dogProfileImageView.SetImageURI(data.Data);
+                    }
+                }
             }
             
+            if (requestCode == REQUEST_TAKE_IMAGE) {
+                // Make it available in the gallery
+                Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
+                Uri fromCameraUri = Uri.FromFile(_file);
+                mediaScanIntent.SetData(fromCameraUri);
+                SendBroadcast(mediaScanIntent);
+
+                if (resultCode == Result.Ok) {
+                    //Inform the user the image has been saved
+                    Toast.MakeText(this, GetText(Resource.String.SavedToGallery), ToastLength.Short).Show();
+                }
+            }
+
             // Dispose of the Java side bitmap.
             GC.Collect();
         }

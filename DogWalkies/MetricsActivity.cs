@@ -20,6 +20,6 @@ namespace DogWalkies
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Metrics);
-        }//ayy lmao
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace DogWalkies
             TextView TVDogFirstName = FindViewById<TextView>(Resource.Id.TextViewDogFirstName);
             Button ButtonWeek = FindViewById<Button>(Resource.Id.ButtonWeek);
             Button ButtonMonth = FindViewById<Button>(Resource.Id.ButtonMonth);
-            Button ButtonYear = FindViewById<Button>(Resource.Id.ButtonMonth);
+            Button ButtonYear = FindViewById<Button>(Resource.Id.ButtonYear);
             Button ButtonNotes = FindViewById<Button>(Resource.Id.ButtonNotesText);
             
             ButtonWeek.SetTypeface(centuryGothic, TypefaceStyle.Normal);

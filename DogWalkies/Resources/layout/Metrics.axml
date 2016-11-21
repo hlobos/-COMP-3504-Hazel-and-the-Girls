@@ -8,15 +8,13 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:minWidth="25px"
-        android:minHeight="25px"
         android:background="#050119">
         <RelativeLayout
             android:maxHeight="60dp"
             android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/DogNameBar"
+            android:id="@+id/RelatvieLayoutDogNameBar"
             android:background="#050119">
             <ImageView
                 android:src="@drawable/pawIcon"
@@ -43,40 +41,42 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:id="@+id/relativeLayout3"
+            android:id="@+id/RelativeLayoutDogImage"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
             android:background="@drawable/dogProfileImageMainView">
             <LinearLayout
                 android:orientation="horizontal"
                 android:minWidth="25px"
                 android:minHeight="25px"
-                android:id="@+id/linearLayout1"
+                android:id="@+id/LinearLayoutGraphButtons"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <Button
                     android:text="Week"
                     android:layout_width="105.0dp"
                     android:layout_height="30dp"
-                    android:id="@+id/weekButton"
+                    android:id="@+id/ButtonWeek"
                     android:textColor="#FFD9D9"
                     android:layout_marginBottom="0.0dp"
                     android:layout_margin="10dp"
-                    android:background="#050119" />
+                    android:background="@drawable/buttonMini" />
                 <Button
                     android:text="Month"
                     android:layout_width="105.0dp"
                     android:layout_height="30dp"
-                    android:id="@+id/monthButton"
+                    android:id="@+id/ButtonMonth"
                     android:textColor="#FFD9D9"
                     android:layout_margin="10dp"
-                    android:background="#050119" />
+                    android:background="@drawable/buttonMini" />
                 <Button
                     android:text="Year"
                     android:layout_width="105dp"
                     android:layout_height="30dp"
-                    android:id="@+id/yearButton"
+                    android:id="@+id/ButtonYear"
                     android:textColor="#FFD9D9"
                     android:layout_margin="10dp"
-                    android:background="#050119"
+                    android:background="@drawable/buttonMini"
                     android:layout_marginRight="10.0dp" />
             </LinearLayout>
         </RelativeLayout>
@@ -100,7 +100,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout3">
+            android:id="@+id/LinearLayoutStats">
             <ImageButton
                 android:src="@drawable/editIcon"
                 android:layout_width="wrap_content"
@@ -121,16 +121,16 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout2">
+            android:id="@+id/LinearLayoutNotesSection">
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="34.0dp"
-                android:id="@+id/linearLayout4"
+                android:id="@+id/LinearLayoutNotesBar"
                 android:background="#050119">
                 <ImageView
                     android:src="@drawable/draftIcon"
-                    android:id="@+id/imageView2"
+                    android:id="@+id/ImageViewDraftIcon"
                     android:layout_width="38.0dp"
                     android:layout_height="match_parent"
                     android:background="#050119"
@@ -138,7 +138,7 @@
                     android:layout_marginLeft="120dp" />
                 <Button
                     android:text="Notes"
-                    android:id="@+id/noteButton"
+                    android:id="@+id/ButtonNotesText"
                     android:textColor="#BAD1C9"
                     android:background="#050119"
                     android:layout_width="74.0dp"
@@ -146,7 +146,7 @@
                     android:paddingLeft="0dp" />
                 <Button
                     android:text="▼"
-                    android:id="@+id/noteButton"
+                    android:id="@+id/ButtonNotes"
                     android:textColor="#BAD1C9"
                     android:background="#050119"
                     android:layout_width="149.5dp"
@@ -159,20 +159,20 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="138.0dp"
-            android:id="@+id/relativeLayout2"
+            android:id="@+id/RelativeLayoutNotesContent"
             android:background="#BAD1C9">
             <TextView
                 android:text="This dog is the best dog ever."
                 android:layout_width="match_parent"
                 android:layout_height="84.5dp"
-                android:id="@+id/notesTextInput"
+                android:id="@+id/TextViewNotes"
                 android:paddingTop="10dp"
                 android:textColor="#152B2F" />
             <ImageButton
                 android:src="@drawable/editIcon2"
                 android:layout_width="40.0dp"
                 android:layout_height="39.0dp"
-                android:id="@+id/imageButton1"
+                android:id="@+id/ImageButtonEditIcon"
                 android:layout_marginLeft="340dp"
                 android:layout_marginTop="90.0dp"
                 android:background="#BAD1C9" />

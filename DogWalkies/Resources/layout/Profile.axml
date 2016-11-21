@@ -3,18 +3,75 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageView
-        android:src="@android:drawable/ic_menu_gallery"
+    
+	<RelativeLayout
+        android:maxHeight="60dp"
+		android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="201.0dp"
-        android:id="@+id/imageView1" />
+        android:layout_height="wrap_content"
+        android:id="@+id/RelativeLayoutDogNameBar"
+        android:background="#050119">
+		<ImageView
+			android:src="@drawable/pawIcon"
+			android:layout_width="54dp"
+			android:layout_height="54dp"
+			android:id="@+id/ImageViewPawPrintIcon" />
+		<TextView
+			android:text="Rover"
+			android:textSize="40dp"
+			android:textColor="#BAD1C9"
+			android:layout_width="200dp"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="60dp"
+			android:id="@+id/TextViewDogFirstName" />
+		<ImageView
+			android:src="@drawable/Icon"
+			android:layout_width="54dp"
+			android:layout_height="54dp"
+			android:layout_alignParentRight="true"
+			android:id="@+id/ImageViewDWIcon" />
+	</RelativeLayout>
+	
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RelativeLayoutDogProfileBar"
+        android:background="#050119">
+		<ImageView
+			android:layout_width="fill_parent"
+			android:layout_height="400dp"
+			android:adjustViewBounds="true"
+			android:scaleType="fitXY"
+			android:id="@+id/ImageViewDogProfile" />
+		<ImageButton
+			android:src="@drawable/addcircleIcon"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_marginTop="350dp"
+			android:layout_alignParentRight="true"
+			android:background="@null"
+			android:id="@+id/ImageButtonAddDogProfileImage" />
+	</RelativeLayout>
+	
+	<LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="10dp"
+            android:background="#050119" />
+
+
+
+
+
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="53.5dp"
         android:id="@+id/linearLayout1">
         <TextView
-            android:text="Owunejfef iafhj eakoivb8rv"
+            android:text="Owner: Umida Vu"
             android:layout_width="301.5dp"
             android:layout_height="match_parent"
             android:id="@+id/textView1"

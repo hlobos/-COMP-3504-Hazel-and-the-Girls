@@ -117,8 +117,8 @@ namespace DogWalkies
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050026
-			public const int ButtonMetrics = 2131034150;
+			// aapt resource value: 0x7f050025
+			public const int ButtonMetrics = 2131034149;
 			
 			// aapt resource value: 0x7f050013
 			public const int ButtonMonth = 2131034131;
@@ -204,26 +204,23 @@ namespace DogWalkies
 			// aapt resource value: 0x7f05001e
 			public const int TextViewNotes = 2131034142;
 			
-			// aapt resource value: 0x7f050023
-			public const int button1 = 2131034147;
+			// aapt resource value: 0x7f050022
+			public const int button1 = 2131034146;
 			
-			// aapt resource value: 0x7f050025
-			public const int button2 = 2131034149;
+			// aapt resource value: 0x7f050024
+			public const int button2 = 2131034148;
 			
-			// aapt resource value: 0x7f050027
-			public const int button3 = 2131034151;
+			// aapt resource value: 0x7f050026
+			public const int button3 = 2131034150;
 			
 			// aapt resource value: 0x7f050015
 			public const int editText1 = 2131034133;
 			
 			// aapt resource value: 0x7f050020
-			public const int imageView1 = 2131034144;
+			public const int linearLayout1 = 2131034144;
 			
-			// aapt resource value: 0x7f050021
-			public const int linearLayout1 = 2131034145;
-			
-			// aapt resource value: 0x7f050024
-			public const int linearLayout2 = 2131034148;
+			// aapt resource value: 0x7f050023
+			public const int linearLayout2 = 2131034147;
 			
 			// aapt resource value: 0x7f050000
 			public const int mainScrollView = 2131034112;
@@ -231,8 +228,8 @@ namespace DogWalkies
 			// aapt resource value: 0x7f05000d
 			public const int metricsScrollView = 2131034125;
 			
-			// aapt resource value: 0x7f050022
-			public const int textView1 = 2131034146;
+			// aapt resource value: 0x7f050021
+			public const int textView1 = 2131034145;
 			
 			// aapt resource value: 0x7f050017
 			public const int weightEditButton = 2131034135;

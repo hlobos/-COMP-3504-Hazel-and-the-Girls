@@ -13,7 +13,7 @@ using Android.Graphics;
 
 namespace DogWalkies
 {
-    [Activity(Label = "DogWalkies", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Material.Light.NoActionBar")]
+    [Activity(Label = "MetricsActivity", Theme = "@android:style/Theme.Material.Light.NoActionBar")]
     public class MetricsActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -23,6 +23,9 @@ namespace DogWalkies
             SetContentView(Resource.Layout.Metrics);
             initializeFontStyle();
             initializeClickEvents();
+
+            //Don't automatically popup the android keyboard when activity starts
+            Window.SetSoftInputMode(SoftInput.StateHidden);
         }
 
         private void initializeClickEvents()

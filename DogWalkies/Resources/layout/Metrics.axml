@@ -4,174 +4,163 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:background="#152B2F">
-    <LinearLayout
-        android:orientation="vertical"
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#050119">
+        
+	<RelativeLayout
+        android:maxHeight="60dp"
+        android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RelatvieLayoutDogNameBar"
         android:background="#050119">
-        <RelativeLayout
-            android:maxHeight="60dp"
-            android:padding="5dp"
-            android:layout_width="match_parent"
+        <ImageView
+            android:src="@drawable/pawIcon"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:id="@+id/ImageViewPaw" />
+        <TextView
+            android:text="Metrics"
+            android:textSize="40dp"
+            android:textColor="#BAD1C9"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:id="@+id/RelatvieLayoutDogNameBar"
-            android:background="#050119">
-            <ImageView
-                android:src="@drawable/pawIcon"
-                android:layout_width="54dp"
-                android:layout_height="54dp"
-                android:id="@+id/ImageViewPaw" />
-            <TextView
-                android:text="Metrics"
-                android:textSize="40dp"
-                android:textColor="#BAD1C9"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="60dp"
-                android:id="@+id/TextViewDogFirstName" />
-            <ImageView
-                android:src="@drawable/Icon"
-                android:layout_width="54dp"
-                android:layout_height="54dp"
-                android:layout_alignParentRight="true"
-                android:id="@+id/ImageViewDWIcon" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:id="@+id/RelativeLayoutDogImage"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:background="@drawable/dogProfileImageMainView">
-            <LinearLayout
-                android:orientation="horizontal"
-                android:id="@+id/LinearLayoutGraphButtons"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <Button
-                    android:text="Week"
-                    android:layout_width="105.0dp"
-                    android:layout_height="30dp"
-                    android:id="@+id/ButtonWeek"
-                    android:textColor="#FFD9D9"
-                    android:layout_marginBottom="0.0dp"
-                    android:layout_margin="10dp"
-                    android:textAllCaps="false"
-                    android:background="@drawable/buttonMini" />
-                <Button
-                    android:text="Month"
-                    android:layout_width="105.0dp"
-                    android:layout_height="30dp"
-                    android:id="@+id/ButtonMonth"
-                    android:textColor="#FFD9D9"
-                    android:layout_margin="10dp"
-                    android:textAllCaps="false"
-                    android:background="@drawable/buttonMini" />
-                <Button
-                    android:text="Year"
-                    android:layout_width="105dp"
-                    android:layout_height="30dp"
-                    android:id="@+id/ButtonYear"
-                    android:textColor="#FFD9D9"
-                    android:layout_margin="10dp"
-                    android:textAllCaps="false"
-                    android:background="@drawable/buttonMini"
-                    android:layout_marginRight="10.0dp" />
-            </LinearLayout>
-        </RelativeLayout>
-        <EditText
-            android:inputType="textMultiLine"
-            android:layout_width="384.0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText1"
-            android:layout_marginRight="0.0dp"
-            android:text="Last Walked:"
-            android:textColor="#BAD1C9" />
-        <EditText
-            android:inputType="textMultiLine"
-            android:layout_width="384.0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText1"
-            android:layout_marginRight="0.0dp"
-            android:text="Total Distance:"
-            android:textColor="#BAD1C9" />
+            android:layout_marginLeft="60dp"
+            android:id="@+id/TextViewDogFirstName" />
+        <ImageView
+            android:src="@drawable/Icon"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/ImageViewDWIcon" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/RelativeLayoutDogImage"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:background="@drawable/dogProfileImageMainView">
         <LinearLayout
             android:orientation="horizontal"
+            android:id="@+id/LinearLayoutGraphButtons"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/LinearLayoutStats">
-            <ImageButton
-                android:src="@drawable/editIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="34.0dp"
-                android:id="@+id/weightEditButton"
-                android:background="#050119" />
-            <EditText
-                android:inputType="textMultiLine"
-                android:id="@+id/editText1"
-                android:text="Weight:"
-                android:textColor="#BAD1C9"
-                android:layout_width="336.5dp"
-                android:layout_height="41.5dp" />
+            android:layout_height="wrap_content">
+            <Button
+                android:text="Week"
+                android:layout_width="105.0dp"
+                android:layout_height="30dp"
+                android:id="@+id/ButtonWeek"
+                android:textColor="#FFD9D9"
+                android:layout_marginBottom="0.0dp"
+                android:layout_margin="10dp"
+                android:textAllCaps="false"
+                android:background="@drawable/buttonMini" />
+            <Button
+                android:text="Month"
+                android:layout_width="105.0dp"
+                android:layout_height="30dp"
+                android:id="@+id/ButtonMonth"
+                android:textColor="#FFD9D9"
+                android:layout_margin="10dp"
+                android:textAllCaps="false"
+                android:background="@drawable/buttonMini" />
+            <Button
+                android:text="Year"
+                android:layout_width="105dp"
+                android:layout_height="30dp"
+                android:id="@+id/ButtonYear"
+                android:textColor="#FFD9D9"
+                android:layout_margin="10dp"
+                android:textAllCaps="false"
+                android:background="@drawable/buttonMini"
+                android:layout_marginRight="10.0dp" />
         </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/LinearLayoutNotesSection">
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="34.0dp"
-                android:id="@+id/LinearLayoutNotesBar"
-                android:background="#050119">
-                <ImageView
-                    android:src="@drawable/draftIcon"
-                    android:id="@+id/ImageViewDraftIcon"
-                    android:layout_width="38.0dp"
-                    android:layout_height="match_parent"
-                    android:background="#050119"
-                    android:paddingLeft="10dp"
-                    android:layout_marginLeft="120dp" />
-                <Button
-                    android:text="Notes"
-                    android:id="@+id/ButtonNotesText"
-                    android:textColor="#BAD1C9"
-                    android:background="#050119"
-                    android:layout_width="74.0dp"
-                    android:layout_height="match_parent"
-                    android:textAllCaps="false"
-                    android:paddingLeft="0dp" />
-                <Button
-                    android:text="▼"
-                    android:id="@+id/ButtonNotes"
-                    android:textColor="#BAD1C9"
-                    android:background="#050119"
-                    android:layout_width="149.5dp"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="100dp" />
-            </LinearLayout>
-        </LinearLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/RelativeLayoutNotesContent"
-            android:background="#BAD1C9">
-            <TextView
-                android:text="This dog is the best dog ever."
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/TextViewNotes"
-                android:paddingTop="10dp"
-                android:textColor="#152B2F" />
-            <ImageButton
-                android:src="@drawable/editIcon2"
-                android:layout_width="40.0dp"
-                android:layout_height="39.0dp"
-                android:id="@+id/ImageButtonEditIcon"
-                android:layout_marginLeft="340dp"
-                android:layout_marginTop="90.0dp"
-                android:background="#BAD1C9" />
-        </RelativeLayout>
+    </RelativeLayout>
+
+    <EditText
+        android:inputType="textMultiLine"
+        android:layout_width="384.0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText1"
+        android:layout_marginRight="0.0dp"
+        android:text="Last Walked:"
+        android:textColor="#BAD1C9" />
+    <EditText
+        android:inputType="textMultiLine"
+        android:layout_width="384.0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText1"
+        android:layout_marginRight="0.0dp"
+        android:text="Total Distance:"
+        android:textColor="#BAD1C9" />
+    
+	<LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LinearLayoutStats">
+        <ImageButton
+            android:src="@drawable/editIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="34.0dp"
+            android:id="@+id/weightEditButton"
+            android:background="#050119" />
+        <EditText
+            android:inputType="textMultiLine"
+            android:id="@+id/editText1"
+            android:text="Weight:"
+            android:textColor="#BAD1C9"
+            android:layout_width="336.5dp"
+            android:layout_height="41.5dp" />
     </LinearLayout>
+        
+	<LinearLayout
+		android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:layout_gravity="center"
+        android:id="@+id/RelativeLayoutNotesSection">
+		<ImageView
+			android:src="@drawable/draftIcon"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:background="@null"
+			android:id="@+id/ImageViewDraftIcon" />
+		<TextView
+			android:text="Notes"
+			android:textColor="#BAD1C9"
+			android:textSize="30dp"
+			android:layout_width="200dp"
+			android:layout_height="wrap_content"
+			android:id="@+id/TextViewNotes" />
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="10dp"
+			android:background="#BAD1C9"
+			android:id="@+id/RelativeLayoutNotesContent">
+			<TextView
+				android:text="-Pack a larger water dish next walk"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textSize="20dp"
+				android:textColor="#050119"
+				android:id="@+id/TextViewNotes" />
+			<ImageButton
+				android:src="@drawable/editIcon2"
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:padding="10dp"
+				android:layout_alignParentRight="true"
+				android:background="@null"
+				android:id="@+id/ImageButtonEditIcon" />
+		</RelativeLayout>
+	</LinearLayout>
+
+</LinearLayout>
 </ScrollView>

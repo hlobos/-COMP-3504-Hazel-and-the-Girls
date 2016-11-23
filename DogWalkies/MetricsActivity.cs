@@ -16,16 +16,35 @@ namespace DogWalkies
     [Activity(Label = "MetricsActivity", Theme = "@android:style/Theme.Material.Light.NoActionBar")]
     public class MetricsActivity : Activity
     {
+
+        private TextView TVDogFirstName;
+        private TextView TextViewNotes;
+        private Button ButtonWeek;
+        private Button ButtonMonth;
+        private Button ButtonYear;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Metrics);
-            initializeFontStyle();
-            initializeClickEvents();
 
             //Don't automatically popup the android keyboard when activity starts
             Window.SetSoftInputMode(SoftInput.StateHidden);
+
+            loadViews();
+            initializeFontStyle();
+            initializeClickEvents();
+
+        }
+
+        private void loadViews()
+        {
+            TVDogFirstName = FindViewById<TextView>(Resource.Id.TextViewDogFirstName);
+            TextViewNotes = FindViewById<TextView>(Resource.Id.TextViewNotes);
+            ButtonWeek = FindViewById<Button>(Resource.Id.ButtonWeek);
+            ButtonMonth = FindViewById<Button>(Resource.Id.ButtonMonth);
+            ButtonYear = FindViewById<Button>(Resource.Id.ButtonYear);
         }
 
         private void initializeClickEvents()
@@ -37,16 +56,11 @@ namespace DogWalkies
         {
             Typeface centuryGothic = Typeface.CreateFromAsset(Assets, "centuryGothic.ttf");
 
-            TextView TVDogFirstName = FindViewById<TextView>(Resource.Id.TextViewDogFirstName);
-            Button ButtonWeek = FindViewById<Button>(Resource.Id.ButtonWeek);
-            Button ButtonMonth = FindViewById<Button>(Resource.Id.ButtonMonth);
-            Button ButtonYear = FindViewById<Button>(Resource.Id.ButtonYear);
-            Button ButtonNotes = FindViewById<Button>(Resource.Id.ButtonNotesText);
-            
+            TVDogFirstName.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewNotes.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonWeek.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonMonth.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonYear.SetTypeface(centuryGothic, TypefaceStyle.Normal);
-            TVDogFirstName.SetTypeface(centuryGothic, TypefaceStyle.Normal);
         }
     }
 }

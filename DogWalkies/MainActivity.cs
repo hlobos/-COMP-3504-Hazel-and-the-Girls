@@ -20,7 +20,14 @@ namespace DogWalkies
         public static File _file;
         public static File _dir;
         public static Bitmap bitmap;
-        private ImageView dogProfileImageView;
+
+        private ImageView ImageViewDogProfile;
+        private Button ButtonProfile;
+        private Button ButtonStartWalk;
+        private TextView TextViewDogFirstName;
+        private ImageButton ImageButtonAddDogProfileImage;
+        private ImageButton ImageButtonCamera;
+
         private int REQUEST_PICK_IMAGE = 1;
         private int REQUEST_TAKE_IMAGE = 2;
 
@@ -30,9 +37,26 @@ namespace DogWalkies
             
             SetContentView(Resource.Layout.Main);
 
+            loadViews();
             initializeFontStyle();
             initializeDogProfileImage();
             initializeClickEvents();
+        }
+
+        private void loadViews()
+        {
+            TextViewDogFirstName = FindViewById<TextView>(Resource.Id.TextViewDogFirstName);
+            ButtonProfile = FindViewById<Button>(Resource.Id.ButtonProfile);
+            ButtonStartWalk = FindViewById<Button>(Resource.Id.ButtonStartWalk);
+            ImageViewDogProfile = FindViewById<ImageView>(Resource.Id.ImageViewDogProfile);
+            ImageButtonAddDogProfileImage = FindViewById<ImageButton>(Resource.Id.ImageButtonAddDogProfileImage);
+            ImageButtonCamera = FindViewById<ImageButton>(Resource.Id.ImageButtonCamera);
+        }
+
+        private void initializeDogProfileImage()
+        {
+            //Programmatically set the default dog profile image
+            ImageViewDogProfile.SetBackgroundResource(Resource.Drawable.dogProfileImageMainView);
         }
 
         private void CreateDirectoryForPictures()
@@ -53,31 +77,20 @@ namespace DogWalkies
             return availableActivities != null && availableActivities.Count > 0;
         }
 
-        private void initializeDogProfileImage()
-        {
-            //Programmatically set the default dog profile image
-            dogProfileImageView = FindViewById<ImageView>(Resource.Id.ImageViewDogProfile);
-            dogProfileImageView.SetBackgroundResource(Resource.Drawable.dogProfileImageMainView);
-        }
+        
         
         private void initializeClickEvents()
         {  
-            Button profileButton = FindViewById<Button>(Resource.Id.ButtonProfile);
-            profileButton.Click += ProfileButton_Click;
-
-            Button startWalkButton = FindViewById<Button>(Resource.Id.ButtonStartWalk);
-            startWalkButton.Click += StartWalkButton_Click;
+            
+            ButtonProfile.Click += ButtonProfile_Click;
+            ButtonStartWalk.Click += ButtonStartWalk_Click;
 
             if (IsThereAnAppToTakePictures())
             {
                 CreateDirectoryForPictures();
 
-                ImageButton addDogProfileImage = FindViewById<ImageButton>(Resource.Id.ImageButtonAddDogProfileImage);
-                addDogProfileImage.Click += GrabAPictureFromGallery;
-
-                ImageButton camera = FindViewById<ImageButton>(Resource.Id.ImageButtonCamera);
-                camera.Click += TakeAPicture;
-
+                ImageButtonAddDogProfileImage.Click += GrabAPictureFromGallery;
+                ImageButtonCamera.Click += TakeAPicture;
             }
         }
 
@@ -85,13 +98,9 @@ namespace DogWalkies
         {
             Typeface centuryGothic = Typeface.CreateFromAsset(Assets, "centuryGothic.ttf");
 
-            TextView TVDogFirstName = FindViewById<TextView>(Resource.Id.TextViewDogFirstName);
-            Button ButtonProfile = FindViewById<Button>(Resource.Id.ButtonProfile);
-            Button ButtonStartWalk = FindViewById<Button>(Resource.Id.ButtonStartWalk);
-
             ButtonProfile.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonStartWalk.SetTypeface(centuryGothic, TypefaceStyle.Normal);
-            TVDogFirstName.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewDogFirstName.SetTypeface(centuryGothic, TypefaceStyle.Normal);
         }
 
         private void GrabAPictureFromGallery(object sender, EventArgs e)
@@ -119,9 +128,8 @@ namespace DogWalkies
                     Toast.MakeText(this, GetText(Resource.String.GeneralError), ToastLength.Short).Show();
                 }
                 else {
-                    // Display image in the dogProfileImageView.
                     if (resultCode == Result.Ok) {
-                        dogProfileImageView.SetImageURI(data.Data);
+                        saveAndDisplayDogProfileImage(data);
                     }
                 }
             }
@@ -143,12 +151,17 @@ namespace DogWalkies
             GC.Collect();
         }
 
-        private void StartWalkButton_Click(object sender, EventArgs e)
+        private void saveAndDisplayDogProfileImage(Intent data)
+        {
+            ImageViewDogProfile.SetImageURI(data.Data);
+        }
+
+        private void ButtonStartWalk_Click(object sender, EventArgs e)
         {
             //Start Walk
         }
 
-        private void ProfileButton_Click(object sender, EventArgs e)
+        private void ButtonProfile_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(ProfileActivity));
         }

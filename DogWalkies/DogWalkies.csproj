@@ -57,7 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\DogAdapter.cs" />
     <Compile Include="BitmapHelpers.cs" />
+    <Compile Include="DataLayer\Dog.cs" />
+    <Compile Include="DataLayer\DogAccessLayer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MetricsActivity.cs" />
     <Compile Include="ProfileActivity.cs" />
@@ -82,7 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DataLayer\packages.config" />
-    <None Include="packages.config" />
     <None Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </None>
@@ -152,6 +154,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\buttonPressedMini.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.

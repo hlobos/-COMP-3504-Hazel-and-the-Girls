@@ -118,30 +118,43 @@
             android:layout_width="336.5dp"
             android:layout_height="41.5dp" />
     </LinearLayout>
-        
+    
+	<TextView
+		android:background="#FFD9D9"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:id="@+id/TextViewBorderTopHack" />    
 	<LinearLayout
-		android:orientation="horizontal"
+		android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-		android:layout_gravity="center"
-        android:id="@+id/RelativeLayoutNotesSection">
-		<ImageView
-			android:src="@drawable/draftIcon"
-			android:layout_width="48dp"
-			android:layout_height="48dp"
-			android:background="@null"
-			android:id="@+id/ImageViewDraftIcon" />
-		<TextView
-			android:text="Notes"
-			android:textColor="#BAD1C9"
-			android:textSize="30dp"
-			android:layout_width="200dp"
+		android:paddingTop="5dp"
+        android:id="@+id/LinearLayoutNotesSection">
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/TextViewNotes" />
+			android:gravity="center"
+			android:id="@+id/LinearLayoutNotesTopBar">
+			<ImageView
+				android:src="@drawable/draftIcon"
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:background="@null"
+				android:id="@+id/ImageViewDraftIcon" />
+			<TextView
+				android:text="Notes"
+				android:textColor="#BAD1C9"
+				android:textSize="35dp"
+				android:layout_width="100dp"
+				android:paddingTop="2dp"
+				android:layout_height="wrap_content"
+				android:id="@+id/TextViewNotes" />
+		</LinearLayout>
 		<RelativeLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:padding="10dp"
+			android:padding="5dp"
 			android:background="#BAD1C9"
 			android:id="@+id/RelativeLayoutNotesContent">
 			<TextView
@@ -149,13 +162,13 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textSize="20dp"
+				android:paddingRight="20dp"
 				android:textColor="#050119"
 				android:id="@+id/TextViewNotes" />
 			<ImageButton
 				android:src="@drawable/editIcon2"
 				android:layout_width="48dp"
 				android:layout_height="48dp"
-				android:padding="10dp"
 				android:layout_alignParentRight="true"
 				android:background="@null"
 				android:id="@+id/ImageButtonEditIcon" />

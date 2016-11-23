@@ -58,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\DogAdapter.cs" />
-    <Compile Include="BitmapHelpers.cs" />
     <Compile Include="DataLayer\Dog.cs" />
     <Compile Include="DataLayer\DogAccessLayer.cs" />
     <Compile Include="MainActivity.cs" />

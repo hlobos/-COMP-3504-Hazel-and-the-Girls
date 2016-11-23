@@ -11,12 +11,15 @@ namespace DogWalkies
 
         public string LastName { get; set; }
 
+        public byte[] ProfileImage { get; set; }
+
         public Dog() { } // must have a default constructor to use SQLite methods 
 
-        public Dog(string firstName, string lastName)
+        public Dog(string firstName, string lastName, byte[] profileImage)
         {
             FirstName = firstName;
             LastName = lastName;
+            ProfileImage = profileImage;
         }
 
         public override string ToString()

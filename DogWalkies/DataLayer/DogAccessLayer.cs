@@ -1,15 +1,6 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using SQLite;
+using Android.Database;
 
 namespace DogWalkies
 {
@@ -71,7 +62,7 @@ namespace DogWalkies
             //get the path to where the application can store internal data 
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
             string dbFileName = "AppData.db"; // name we want to give to our db file
-            string fullDBPath = System.IO.Path.Combine(folderPath, dbFileName); // properly formate the path for the system we are on
+            string fullDBPath = System.IO.Path.Combine(folderPath, dbFileName); // properly format the path for the system we are on
 
             //if file does not already exist it will be created for us
             dbConnection = new SQLiteConnection(fullDBPath);
@@ -80,7 +71,7 @@ namespace DogWalkies
 
         public void addDog(Dog info)
         {
-            dbConnection.Insert(info);
+            dbConnection.InsertOrReplace(info);
         }
 
         public Dog getDogByID(int id)
@@ -93,17 +84,16 @@ namespace DogWalkies
             dbConnection.Delete<Dog>(id);
         }
 
-        public void updateDogInfo(Dog info)
+        public void updateDog(Dog info)
         {
             dbConnection.Update(info);
         }
 
         public List<Dog> getAllDogs()
         {
-            //gets all elements in the Student table and packages it into a List
+            //gets all elements in the Dog table and packages it into a List
             return new List<Dog>(dbConnection.Table<Dog>());
         }
-
 
         public List<Dog> getAllDogsOrdered()
         {
@@ -111,5 +101,18 @@ namespace DogWalkies
             return new List<Dog>(dbConnection.Table<Dog>().OrderBy(doggo => doggo.FirstName));
         }
 
+        public bool isDogTableEmpty()
+        {
+            if (dbConnection.Table<Dog>().Count() != 0) {
+                return false;
+            }
+
+            return true;
+        }
+
+        public int getFirstDogTableId()
+        {
+            return dbConnection.Table<Dog>().First().ID;
+        }
     }
 }

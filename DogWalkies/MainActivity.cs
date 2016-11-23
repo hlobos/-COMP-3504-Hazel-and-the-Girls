@@ -4,12 +4,12 @@ using Android.Content;
 using Android.Widget;
 using Android.OS;
 using Android.Graphics;
-using Java.IO;
 using Android.Provider;
 using System.Collections.Generic;
 using Android.Content.PM;
 using Environment = Android.OS.Environment;
 using Uri = Android.Net.Uri;
+using System.IO;
 
 namespace DogWalkies
 {
@@ -17,9 +17,12 @@ namespace DogWalkies
     public class MainActivity : Activity
     {
 
-        public static File _file;
-        public static File _dir;
+        public static Java.IO.File _file;
+        public static Java.IO.File _dir;
         public static Bitmap bitmap;
+        private DogAccessLayer dataDogAccess = DogAccessLayer.getInstance();
+        private Dog dog;
+        private byte[] dogProfileImage;
 
         private ImageView ImageViewDogProfile;
         private Button ButtonProfile;
@@ -55,13 +58,21 @@ namespace DogWalkies
 
         private void initializeDogProfileImage()
         {
-            //Programmatically set the default dog profile image
-            ImageViewDogProfile.SetBackgroundResource(Resource.Drawable.dogProfileImageMainView);
+            if (dataDogAccess.isDogTableEmpty())
+            {
+                AddDogProfileImageFromDrawable();
+            }
+            else {
+                dog = dataDogAccess.getDogByID(0);
+            }
+
+            //Set the ImageView for the dog profile image
+            ImageViewDogProfile.SetImageBitmap(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
         }
 
         private void CreateDirectoryForPictures()
         {
-            _dir = new File(
+            _dir = new Java.IO.File(
             Environment.GetExternalStoragePublicDirectory(Environment.DirectoryPictures), "DogWalkies");
             if (!_dir.Exists())
             {
@@ -114,7 +125,7 @@ namespace DogWalkies
         private void TakeAPicture(object sender, EventArgs e)
         {
             Intent intent = new Intent(MediaStore.ActionImageCapture);
-            _file = new File(_dir, string.Format("DogWalkies_{0}.jpg", Guid.NewGuid()));
+            _file = new Java.IO.File(_dir, string.Format("DogWalkies_{0}.jpg", Guid.NewGuid()));
             intent.PutExtra(MediaStore.ExtraOutput, Uri.FromFile(_file));
             StartActivityForResult(intent, REQUEST_TAKE_IMAGE);
         }
@@ -129,7 +140,7 @@ namespace DogWalkies
                 }
                 else {
                     if (resultCode == Result.Ok) {
-                        saveAndDisplayDogProfileImage(data);
+                        UpdateDogProfileImageFromIntentData(data);
                     }
                 }
             }
@@ -151,9 +162,38 @@ namespace DogWalkies
             GC.Collect();
         }
 
-        private void saveAndDisplayDogProfileImage(Intent data)
+        private void UpdateDogProfileImageFromIntentData(Intent data)
         {
-            ImageViewDogProfile.SetImageURI(data.Data);
+            //Uri --> Bitmap
+            Uri newProfileImgUri = data.Data;
+            Bitmap newProfileImgBitmap = MediaStore.Images.Media.GetBitmap(ContentResolver, newProfileImgUri);
+
+            //Bitmap --> byte[] array
+            MemoryStream stream = new MemoryStream();
+            newProfileImgBitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
+            dogProfileImage = stream.ToArray();
+
+            //Update database
+            dog.ProfileImage = dogProfileImage;
+            dataDogAccess.updateDog(dog);
+
+            //Re-set the dog profile ImageView
+            ImageViewDogProfile.SetImageBitmap(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
+        }
+
+        private void AddDogProfileImageFromDrawable()
+        {
+            //Drawable --> Bitmap
+            Bitmap dogImgBitmap = BitmapFactory.DecodeResource(Resources, Resource.Drawable.dogProfileImageMainView);
+
+            //Bitmap --> byte[] array
+            MemoryStream stream = new MemoryStream();
+            dogImgBitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
+            dogProfileImage = stream.ToArray();
+
+            //Create Dog and add to database
+            dog = new Dog("Rover", "", dogProfileImage);
+            dataDogAccess.addDog(dog);
         }
 
         private void ButtonStartWalk_Click(object sender, EventArgs e)

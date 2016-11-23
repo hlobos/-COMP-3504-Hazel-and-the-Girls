@@ -123,6 +123,9 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050013
 			public const int ButtonMonth = 2131034131;
 			
+			// aapt resource value: 0x7f050017
+			public const int ButtonNextWalk = 2131034135;
+			
 			// aapt resource value: 0x7f050008
 			public const int ButtonProfile = 2131034120;
 			
@@ -165,8 +168,8 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050011
 			public const int LinearLayoutGraphButtons = 2131034129;
 			
-			// aapt resource value: 0x7f050016
-			public const int LinearLayoutStats = 2131034134;
+			// aapt resource value: 0x7f050015
+			public const int LinearLayoutMetricsInfo = 2131034133;
 			
 			// aapt resource value: 0x7f05000a
 			public const int RelativeLayoutCameraBar = 2131034122;
@@ -192,6 +195,9 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050003
 			public const int TextViewDogFirstName = 2131034115;
 			
+			// aapt resource value: 0x7f050016
+			public const int TextViewLastWalked = 2131034134;
+			
 			// aapt resource value: 0x7f05001a
 			public const int TextViewNotes = 2131034138;
 			
@@ -201,11 +207,11 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050021
 			public const int button2 = 2131034145;
 			
-			// aapt resource value: 0x7f050023
-			public const int button3 = 2131034147;
+			// aapt resource value: 0x7f050024
+			public const int button3 = 2131034148;
 			
-			// aapt resource value: 0x7f050015
-			public const int editText1 = 2131034133;
+			// aapt resource value: 0x7f050023
+			public const int editText1 = 2131034147;
 			
 			// aapt resource value: 0x7f05001d
 			public const int linearLayout1 = 2131034141;
@@ -221,9 +227,6 @@ namespace DogWalkies
 			
 			// aapt resource value: 0x7f05001e
 			public const int textView1 = 2131034142;
-			
-			// aapt resource value: 0x7f050017
-			public const int weightEditButton = 2131034135;
 			
 			static Id()
 			{

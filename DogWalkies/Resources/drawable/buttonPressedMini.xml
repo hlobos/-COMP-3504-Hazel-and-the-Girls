@@ -10,8 +10,8 @@
     android:right="0dp"
     android:bottom="0dp" />
   <size
-    android:width="105dp"
-    android:height="30dp" />
+    android:width="120dp"
+    android:height="40dp" />
   <stroke
     android:width="3dp"
     android:color="#FFD9D9" />

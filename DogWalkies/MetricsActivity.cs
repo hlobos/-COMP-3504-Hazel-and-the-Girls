@@ -1,12 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Graphics;
@@ -19,9 +13,18 @@ namespace DogWalkies
 
         private TextView TVDogFirstName;
         private TextView TextViewNotes;
+        private TextView TextViewLastWalked;
+        private TextView TextViewLastWalkedData;
+        private TextView TextViewTotalDistance;
+        private TextView TextViewTotalDistanceData;
+        private TextView TextViewTotalTime;
+        private TextView TextViewTotalTimeData;
+        private TextView TextViewReminder;
+        private TextView TextViewReminderData;
         private Button ButtonWeek;
         private Button ButtonMonth;
         private Button ButtonYear;
+        private Button ButtonWalkReminder;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -35,21 +38,34 @@ namespace DogWalkies
             loadViews();
             initializeFontStyle();
             initializeClickEvents();
-
         }
 
         private void loadViews()
         {
             TVDogFirstName = FindViewById<TextView>(Resource.Id.TextViewDogFirstName);
             TextViewNotes = FindViewById<TextView>(Resource.Id.TextViewNotes);
+            TextViewLastWalked = FindViewById<TextView>(Resource.Id.TextViewLastWalked);
+            TextViewLastWalkedData = FindViewById<TextView>(Resource.Id.TextViewLastWalkedData);
+            TextViewTotalDistance = FindViewById<TextView>(Resource.Id.TextViewTotalDistance);
+            TextViewTotalDistanceData = FindViewById<TextView>(Resource.Id.TextViewTotalDistanceData);
+            TextViewTotalTime = FindViewById<TextView>(Resource.Id.TextViewTotalTime);
+            TextViewTotalTimeData = FindViewById<TextView>(Resource.Id.TextViewTotalTimeData);
+            TextViewReminder = FindViewById<TextView>(Resource.Id.TextViewReminder);
+            TextViewReminderData = FindViewById<TextView>(Resource.Id.TextViewReminderData);
             ButtonWeek = FindViewById<Button>(Resource.Id.ButtonWeek);
             ButtonMonth = FindViewById<Button>(Resource.Id.ButtonMonth);
             ButtonYear = FindViewById<Button>(Resource.Id.ButtonYear);
+            ButtonWalkReminder = FindViewById<Button>(Resource.Id.ButtonWalkReminder);
         }
 
         private void initializeClickEvents()
         {
-            //do dis later
+            ButtonWalkReminder.Click += ButtonWalkReminder_Click;
+        }
+
+        private void ButtonWalkReminder_Click(object sender, EventArgs e)
+        {
+            //Create Dialogue
         }
 
         private void initializeFontStyle()
@@ -58,9 +74,18 @@ namespace DogWalkies
 
             TVDogFirstName.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             TextViewNotes.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewLastWalked.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewLastWalkedData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewTotalDistance.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewTotalDistanceData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewTotalTime.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewTotalTimeData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewReminder.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewReminderData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonWeek.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonMonth.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonYear.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            ButtonWalkReminder.SetTypeface(centuryGothic, TypefaceStyle.Normal);
         }
     }
 }

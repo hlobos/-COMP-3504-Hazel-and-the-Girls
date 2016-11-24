@@ -75,34 +75,40 @@ namespace DogWalkies
 			public const int cameraIconPressed = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int dogProfileImageMainView = 2130837514;
+			public const int chart = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int DogWalkiesLogo = 2130837515;
+			public const int dogProfileImageMainView = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int draftIcon = 2130837516;
+			public const int dogProfileImageMainViewTransparent = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int editIcon = 2130837517;
+			public const int DogWalkiesLogo = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int editIcon2 = 2130837518;
+			public const int draftIcon = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int homeIcon = 2130837519;
+			public const int editIcon = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int Icon = 2130837520;
+			public const int editIcon2 = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int imageIcon = 2130837521;
+			public const int homeIcon = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int infoIcon = 2130837522;
+			public const int Icon = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int pawIcon = 2130837523;
+			public const int imageIcon = 2130837523;
+			
+			// aapt resource value: 0x7f020014
+			public const int infoIcon = 2130837524;
+			
+			// aapt resource value: 0x7f020015
+			public const int pawIcon = 2130837525;
 			
 			static Drawable()
 			{
@@ -117,8 +123,8 @@ namespace DogWalkies
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050025
-			public const int ButtonMetrics = 2131034149;
+			// aapt resource value: 0x7f05002f
+			public const int ButtonMetrics = 2131034159;
 			
 			// aapt resource value: 0x7f050013
 			public const int ButtonMonth = 2131034131;
@@ -144,8 +150,11 @@ namespace DogWalkies
 			// aapt resource value: 0x7f05000b
 			public const int ImageButtonCamera = 2131034123;
 			
-			// aapt resource value: 0x7f05001f
-			public const int ImageButtonEditIcon = 2131034143;
+			// aapt resource value: 0x7f050029
+			public const int ImageButtonEditIcon = 2131034153;
+			
+			// aapt resource value: 0x7f050015
+			public const int ImageViewChart = 2131034133;
 			
 			// aapt resource value: 0x7f050004
 			public const int ImageViewDWIcon = 2131034116;
@@ -156,8 +165,8 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050006
 			public const int ImageViewDogProfile = 2131034118;
 			
-			// aapt resource value: 0x7f05001c
-			public const int ImageViewDraftIcon = 2131034140;
+			// aapt resource value: 0x7f050026
+			public const int ImageViewDraftIcon = 2131034150;
 			
 			// aapt resource value: 0x7f05000f
 			public const int ImageViewPaw = 2131034127;
@@ -168,14 +177,11 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050011
 			public const int LinearLayoutGraphButtons = 2131034129;
 			
-			// aapt resource value: 0x7f050015
-			public const int LinearLayoutMetricsInfo = 2131034133;
+			// aapt resource value: 0x7f050024
+			public const int LinearLayoutNotesSection = 2131034148;
 			
-			// aapt resource value: 0x7f05001a
-			public const int LinearLayoutNotesSection = 2131034138;
-			
-			// aapt resource value: 0x7f05001b
-			public const int LinearLayoutNotesTopBar = 2131034139;
+			// aapt resource value: 0x7f050025
+			public const int LinearLayoutNotesTopBar = 2131034149;
 			
 			// aapt resource value: 0x7f05000a
 			public const int RelativeLayoutCameraBar = 2131034122;
@@ -189,44 +195,74 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050005
 			public const int RelativeLayoutDogProfileBar = 2131034117;
 			
+			// aapt resource value: 0x7f05001b
+			public const int RelativeLayoutLastWalked = 2131034139;
+			
+			// aapt resource value: 0x7f050028
+			public const int RelativeLayoutNotesContent = 2131034152;
+			
+			// aapt resource value: 0x7f050018
+			public const int RelativeLayoutReminder = 2131034136;
+			
 			// aapt resource value: 0x7f05001e
-			public const int RelativeLayoutNotesContent = 2131034142;
+			public const int RelativeLayoutTotalDistance = 2131034142;
+			
+			// aapt resource value: 0x7f050021
+			public const int RelativeLayoutTotalTime = 2131034145;
 			
 			// aapt resource value: 0x7f05000e
 			public const int RelatvieLayoutDogNameBar = 2131034126;
 			
-			// aapt resource value: 0x7f050019
-			public const int TextViewBorderTopHack = 2131034137;
+			// aapt resource value: 0x7f050017
+			public const int TextViewBorderTopHack = 2131034135;
 			
 			// aapt resource value: 0x7f050003
 			public const int TextViewDogFirstName = 2131034115;
 			
-			// aapt resource value: 0x7f050017
-			public const int TextViewLastWalked = 2131034135;
-			
-			// aapt resource value: 0x7f050018
-			public const int TextViewLastWalkedData = 2131034136;
+			// aapt resource value: 0x7f05001c
+			public const int TextViewLastWalked = 2131034140;
 			
 			// aapt resource value: 0x7f05001d
-			public const int TextViewNotes = 2131034141;
-			
-			// aapt resource value: 0x7f050022
-			public const int button1 = 2131034146;
-			
-			// aapt resource value: 0x7f050024
-			public const int button2 = 2131034148;
+			public const int TextViewLastWalkedData = 2131034141;
 			
 			// aapt resource value: 0x7f050027
-			public const int button3 = 2131034151;
+			public const int TextViewNotes = 2131034151;
 			
-			// aapt resource value: 0x7f050026
-			public const int editText1 = 2131034150;
+			// aapt resource value: 0x7f050019
+			public const int TextViewReminder = 2131034137;
+			
+			// aapt resource value: 0x7f05001a
+			public const int TextViewReminderData = 2131034138;
+			
+			// aapt resource value: 0x7f05001f
+			public const int TextViewTotalDistance = 2131034143;
 			
 			// aapt resource value: 0x7f050020
-			public const int linearLayout1 = 2131034144;
+			public const int TextViewTotalDistanceData = 2131034144;
+			
+			// aapt resource value: 0x7f050022
+			public const int TextViewTotalTime = 2131034146;
 			
 			// aapt resource value: 0x7f050023
-			public const int linearLayout2 = 2131034147;
+			public const int TextViewTotalTimeData = 2131034147;
+			
+			// aapt resource value: 0x7f05002c
+			public const int button1 = 2131034156;
+			
+			// aapt resource value: 0x7f05002e
+			public const int button2 = 2131034158;
+			
+			// aapt resource value: 0x7f050031
+			public const int button3 = 2131034161;
+			
+			// aapt resource value: 0x7f050030
+			public const int editText1 = 2131034160;
+			
+			// aapt resource value: 0x7f05002a
+			public const int linearLayout1 = 2131034154;
+			
+			// aapt resource value: 0x7f05002d
+			public const int linearLayout2 = 2131034157;
 			
 			// aapt resource value: 0x7f050000
 			public const int mainScrollView = 2131034112;
@@ -234,8 +270,8 @@ namespace DogWalkies
 			// aapt resource value: 0x7f05000d
 			public const int metricsScrollView = 2131034125;
 			
-			// aapt resource value: 0x7f050021
-			public const int textView1 = 2131034145;
+			// aapt resource value: 0x7f05002b
+			public const int textView1 = 2131034155;
 			
 			static Id()
 			{

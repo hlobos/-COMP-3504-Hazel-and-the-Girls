@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#050119">
+    android:background="#152B2F">
         
 	<RelativeLayout
         android:maxHeight="60dp"
@@ -44,84 +44,201 @@
         android:id="@+id/RelativeLayoutDogImage"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:background="@drawable/dogProfileImageMainView">
+        android:background="@drawable/dogProfileImageMainViewTransparent">
         <LinearLayout
             android:orientation="horizontal"
-            android:id="@+id/LinearLayoutGraphButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-			android:gravity="center">
+			android:gravity="center"
+			android:paddingTop="10dp"
+			android:paddingBottom="0dp"
+            android:id="@+id/LinearLayoutGraphButtons">
             <Button
                 android:text="Week"
 				android:textSize="30dp"
-                android:layout_width="105.0dp"
-                android:layout_height="30dp"
-                android:id="@+id/ButtonWeek"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
                 android:textColor="#FFD9D9"
-                android:layout_marginBottom="0.0dp"
-                android:layout_margin="10dp"
                 android:textAllCaps="false"
-                android:background="@drawable/buttonMini" />
+				android:layout_marginLeft="10dp"
+				android:layout_marginRight="10dp"
+                android:background="@drawable/buttonMini"
+                android:id="@+id/ButtonWeek" />
             <Button
                 android:text="Month"
 				android:textSize="30dp"
-                android:layout_width="105.0dp"
-                android:layout_height="30dp"
-                android:id="@+id/ButtonMonth"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
                 android:textColor="#FFD9D9"
-                android:layout_margin="10dp"
                 android:textAllCaps="false"
-                android:background="@drawable/buttonMini" />
+				android:layout_marginLeft="10dp"
+				android:layout_marginRight="10dp"
+                android:background="@drawable/buttonMini"
+                android:id="@+id/ButtonMonth" />
             <Button
                 android:text="Year"
 				android:textSize="30dp"
-                android:layout_width="105dp"
-                android:layout_height="30dp"
-                android:id="@+id/ButtonYear"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
                 android:textColor="#FFD9D9"
-                android:layout_margin="10dp"
                 android:textAllCaps="false"
+				android:layout_marginLeft="10dp"
+				android:layout_marginRight="10dp"
                 android:background="@drawable/buttonMini"
-                android:layout_marginRight="10.0dp" />
+                android:id="@+id/ButtonYear" />
         </LinearLayout>
+		<ImageView
+			android:src="@drawable/chart"
+			android:layout_width="match_parent"
+			android:layout_height="400dp"
+			android:layout_margin="20dp"
+			android:layout_marginTop="100dp"
+			android:layout_marginBottom="0dp"
+			android:id="@+id/ImageViewChart" />
     </RelativeLayout>
 
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-			android:id="@+id/LinearLayoutMetricsInfo">
-	<Button
-		android:text="Add Walk Reminder"
-		android:layout_width="200dp"
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:textSize="35dp"
-		android:textColor="#FFD9D9"
-		android:textAllCaps="false"
-		android:background="@drawable/button"
-		android:id="@+id/ButtonWalkReminder" />
+		android:minHeight="10dp"
+		android:background="#050119">
 	</LinearLayout>
 
-	<LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-			android:id="@+id/LinearLayoutMetricsInfo">
+   <Button
+        android:text="Add Walk Reminder"
+        android:textColor="#FFD9D9"
+		android:textSize="30sp"
+		android:layout_width="380dp"
+		android:layout_height="60dp"
+		android:layout_gravity="center"
+		android:layout_margin="10dp"
+		android:paddingLeft="5dp"
+		android:paddingRight="5dp"
+		android:background="@drawable/button" 
+		android:textAllCaps="false"
+		android:drawableLeft="@drawable/editIcon"
+        android:id="@+id/ButtonWalkReminder" />
+
 	<TextView
-		android:text="Last Walked:"
-		android:textColor="#BAD1C9"
-		android:textSize="35dp"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/TextViewLastWalked" />
+			android:background="#FFD9D9"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:id="@+id/TextViewBorderTopHack" />
+	<RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:padding="10dp"
+		android:background="#050119"
+		android:id="@+id/RelativeLayoutReminder">
+		<TextView
+			android:text="Next Reminder:"
+			android:textColor="#BAD1C9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:id="@+id/TextViewReminder" />
+		<TextView
+			android:text="Dec. 14, 2016"
+			android:textColor="#FFD9D9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:id="@+id/TextViewReminderData" />
+    </RelativeLayout>
+
 	<TextView
-		android:text="2 days ago"
-		android:textColor="#BAD1C9"
-		android:textSize="35dp"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/TextViewLastWalkedData" />
-    </LinearLayout>
+			android:background="#FFD9D9"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:id="@+id/TextViewBorderTopHack" />
+	<RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:padding="10dp"
+		android:background="#050119"
+		android:id="@+id/RelativeLayoutLastWalked">
+		<TextView
+			android:text="Last Walked:"
+			android:textColor="#BAD1C9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:id="@+id/TextViewLastWalked" />
+		<TextView
+			android:text="2 days ago"
+			android:textColor="#FFD9D9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:id="@+id/TextViewLastWalkedData" />
+    </RelativeLayout>
+
+	<TextView
+			android:background="#FFD9D9"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:id="@+id/TextViewBorderTopHack" />
+	<RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:padding="10dp"
+		android:background="#050119"
+		android:id="@+id/RelativeLayoutTotalDistance">
+		<TextView
+			android:text="Total Distance:"
+			android:textColor="#BAD1C9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:id="@+id/TextViewTotalDistance" />
+		<TextView
+			android:text="55 km"
+			android:textColor="#FFD9D9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:id="@+id/TextViewTotalDistanceData" />
+    </RelativeLayout>
+
+	<TextView
+			android:background="#FFD9D9"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:id="@+id/TextViewBorderTopHack" />
+	<RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:padding="10dp"
+		android:background="#050119"
+		android:id="@+id/RelativeLayoutTotalTime">
+		<TextView
+			android:text="Total Walked Hours:"
+			android:textColor="#BAD1C9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:id="@+id/TextViewTotalTime" />
+		<TextView
+			android:text="10 hours"
+			android:textColor="#FFD9D9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:id="@+id/TextViewTotalTimeData" />
+    </RelativeLayout>
     
 	<TextView
 		android:background="#FFD9D9"
@@ -133,6 +250,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 		android:paddingTop="5dp"
+		android:background="#050119"
         android:id="@+id/LinearLayoutNotesSection">
 		<LinearLayout
 			android:orientation="horizontal"

@@ -92,7 +92,6 @@ namespace DogWalkies
         
         private void initializeClickEvents()
         {  
-            
             ButtonProfile.Click += ButtonProfile_Click;
             ButtonStartWalk.Click += ButtonStartWalk_Click;
 

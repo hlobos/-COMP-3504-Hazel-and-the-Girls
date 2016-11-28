@@ -123,6 +123,9 @@ namespace DogWalkies
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f05002e
+			public const int ButtonMetrics = 2131034158;
+			
 			// aapt resource value: 0x7f050013
 			public const int ButtonMonth = 2131034131;
 			
@@ -131,6 +134,9 @@ namespace DogWalkies
 			
 			// aapt resource value: 0x7f050009
 			public const int ButtonStartWalk = 2131034121;
+			
+			// aapt resource value: 0x7f05002d
+			public const int ButtonViewAlbum = 2131034157;
 			
 			// aapt resource value: 0x7f050016
 			public const int ButtonWalkReminder = 2131034134;
@@ -147,17 +153,11 @@ namespace DogWalkies
 			// aapt resource value: 0x7f05000b
 			public const int ImageButtonCamera = 2131034123;
 			
-			// aapt resource value: 0x7f05002d
-			public const int ImageButtonEditDogOwnerName = 2131034157;
+			// aapt resource value: 0x7f05002c
+			public const int ImageButtonEditDogOwnerName = 2131034156;
 			
 			// aapt resource value: 0x7f050029
 			public const int ImageButtonEditIcon = 2131034153;
-			
-			// aapt resource value: 0x7f05002f
-			public const int ImageButtonViewImage = 2131034159;
-			
-			// aapt resource value: 0x7f050030
-			public const int ImageButtonViewMetrics = 2131034160;
 			
 			// aapt resource value: 0x7f050015
 			public const int ImageViewChart = 2131034133;
@@ -179,9 +179,6 @@ namespace DogWalkies
 			
 			// aapt resource value: 0x7f050002
 			public const int ImageViewPawPrintIcon = 2131034114;
-			
-			// aapt resource value: 0x7f05002b
-			public const int LinearLayoutDogProfileImageButtons = 2131034155;
 			
 			// aapt resource value: 0x7f050011
 			public const int LinearLayoutGraphButtons = 2131034129;
@@ -225,11 +222,14 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050017
 			public const int TextViewBorderTopHack = 2131034135;
 			
+			// aapt resource value: 0x7f05002f
+			public const int TextViewBreed = 2131034159;
+			
+			// aapt resource value: 0x7f050030
+			public const int TextViewBreedData = 2131034160;
+			
 			// aapt resource value: 0x7f050003
 			public const int TextViewDogFirstName = 2131034115;
-			
-			// aapt resource value: 0x7f05002e
-			public const int TextViewDogInfo = 2131034158;
 			
 			// aapt resource value: 0x7f05001c
 			public const int TextViewLastWalked = 2131034140;
@@ -240,8 +240,8 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050027
 			public const int TextViewNotes = 2131034151;
 			
-			// aapt resource value: 0x7f05002c
-			public const int TextViewOwnerName = 2131034156;
+			// aapt resource value: 0x7f05002b
+			public const int TextViewOwnerName = 2131034155;
 			
 			// aapt resource value: 0x7f050019
 			public const int TextViewReminder = 2131034137;

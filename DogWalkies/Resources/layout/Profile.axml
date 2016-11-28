@@ -38,16 +38,27 @@
 			android:id="@+id/ImageViewDWIcon" />
 	</RelativeLayout>
 	<RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/RelativeLayoutDogProfileBar"
-            android:background="#050119">
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="400dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:id="@+id/ImageViewDogProfile" />
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/RelativeLayoutDogImage"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:background="@drawable/dogProfileImageMainView">
+			<TextView
+				android:text="Owner: Umida Vu"
+				android:layout_width="300dp"
+				android:layout_height="match_parent"
+				android:textSize="35dp"
+				android:textColor="#BAD1C9"
+				android:id="@+id/TextViewOwnerName" />
+			<ImageButton
+				android:src="@drawable/editIcon"
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:layout_marginTop="350dp"
+				android:layout_alignParentRight="true"
+				android:background="@null"
+				android:id="@+id/ImageButtonEditDogOwnerName" />
             <ImageButton
                 android:src="@drawable/addcircleIcon"
                 android:layout_width="48dp"
@@ -62,89 +73,64 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="10dp"
-            android:background="#050119" />
-     
-
-
-
-
-
-	 <LinearLayout
-		android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-		android:gravity="left"
-        android:id="@+id/LinearLayoutDogProfileImageButtons"
-        android:background="#050119">
-		<ImageView
-			android:layout_width="fill_parent"
-			android:layout_height="400dp"
-			android:adjustViewBounds="true"
-			android:scaleType="fitXY"
-			android:id="@+id/ImageViewDogProfile" />
-		<TextView
-            android:text="Owner: Loca Boco"
-            android:layout_width="301.5dp"
-            android:layout_height="match_parent"
-            android:id="@+id/TextViewOwnerName"
-            android:textSize="20dp"
-			android:textColor="#BAD1C9"
-            android:paddingTop="12.6dp" />
-		<ImageButton
-			android:src="@drawable/editIcon"
-			android:layout_width="48dp"
-			android:layout_height="48dp"
-			android:layout_marginTop="350dp"
-			android:layout_alignParentRight="true"
-			android:background="@null"
-			android:id="@+id/ImageButtonEditDogOwnerName" />	
-		<ImageButton
-			android:src="@drawable/addcircleIcon"
-			android:layout_width="48dp"
-			android:layout_height="48dp"
-			android:layout_marginTop="350dp"
-			android:layout_alignParentRight="true"
-			android:background="@null"
-			android:id="@+id/ImageButtonAddDogProfileImage" />
-	</LinearLayout>
-		
-	<TextView
-		android:background="#FFD9D9"
-		android:layout_width="match_parent"
-		android:layout_height="1dp"
-		android:id="@+id/TextViewDogInfo" />
+            android:background="#050119" />  
+	<Button
+		android:text="View Album"
+		android:textColor="#FFD9D9"
+		android:textSize="30sp"
+		android:layout_width="380dp"
+		android:layout_height="60dp"
+		android:layout_gravity="center"
+		android:layout_margin="10dp"
+		android:paddingLeft="5dp"
+		android:paddingRight="5dp"
+		android:background="@drawable/button" 
+		android:textAllCaps="false"
+		android:drawableLeft="@drawable/imageIcon"
+		android:id="@+id/ButtonViewAlbum" />
+	<Button
+		android:text="Metrics"
+		android:textColor="#FFD9D9"
+		android:textSize="30sp"
+		android:layout_width="380dp"
+		android:layout_height="60dp"
+		android:layout_gravity="center"
+		android:layout_margin="10dp"
+		android:paddingLeft="5dp"
+		android:paddingRight="5dp"
+		android:background="@drawable/button" 
+		android:textAllCaps="false"
+		android:drawableLeft="@drawable/infoIcon"
+		android:id="@+id/ButtonMetrics" />
 	
-	<LinearLayout
+	<TextView
+			android:background="#FFD9D9"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:id="@+id/TextViewBorderTopHack" />
+	<RelativeLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="10dp"
-        android:background="#050119" >
-		<ImageButton
-			android:src="@drawable/imageIcon"
-			android:text="View Album"
+		android:padding="10dp"
+		android:background="#152B2F"
+		android:id="@+id/RelativeLayoutLastWalked">
+		<TextView
+			android:text="Breed:"
 			android:textColor="#BAD1C9"
-			android:layout_width="48dp"
-			android:layout_height="48dp"
-			android:layout_marginTop="350dp"
-			android:layout_alignParentRight="true"
-			android:background="@null"
-			android:id="@+id/ImageButtonViewImage"
-			android:layout_gravity="left"
-			android:layout_margin="10dp" />
-			<ImageButton
-			android:src="@drawable/infoIcon"
-			android:text="Metrics"
-			android:textColor="#BAD1C9"
-			android:layout_width="48dp"
-			android:layout_height="48dp"
-			android:layout_marginTop="350dp"
-			android:layout_alignParentRight="true"
-			android:background="@null"
-			android:id="@+id/ImageButtonViewMetrics" 
-			android:layout_gravity="left"
-			android:layout_margin="10dp" />
-	</LinearLayout>
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:id="@+id/TextViewBreed" />
+		<TextView
+			android:text="Sheltie"
+			android:textColor="#FFD9D9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/TextViewBreedData" />
+    </RelativeLayout>
 
 </LinearLayout>
 </ScrollView>

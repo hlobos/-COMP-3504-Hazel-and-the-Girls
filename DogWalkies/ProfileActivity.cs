@@ -8,6 +8,7 @@ using Android.Content;
 using Uri = Android.Net.Uri;
 using Android.Provider;
 using System.IO;
+using Android.Graphics.Drawables;
 
 namespace DogWalkies
 {
@@ -15,10 +16,10 @@ namespace DogWalkies
     public class ProfileActivity : Activity
     {
         private TextView TextViewDogFirstName;
-        private ImageView ImageViewDogProfile;
+        private RelativeLayout RelativeLayoutDogProfile;
         private ImageButton ImageButtonAddDogProfileImage;
-        private ImageButton ImageButtonViewImage;
-        private ImageButton ImageButtonViewMetrics;
+        private Button ButtonViewAlbum;
+        private Button ButtonMetrics;
 
         private DogAccessLayer dataDogAccess = DogAccessLayer.getInstance();
         private Dog dog;
@@ -44,10 +45,10 @@ namespace DogWalkies
         private void loadViews()
         {
             TextViewDogFirstName = FindViewById<TextView>(Resource.Id.TextViewDogFirstName);
-            ImageViewDogProfile = FindViewById<ImageView>(Resource.Id.ImageViewDogProfile);
+            RelativeLayoutDogProfile = FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutDogImage);
             ImageButtonAddDogProfileImage = FindViewById<ImageButton>(Resource.Id.ImageButtonAddDogProfileImage);
-            ImageButtonViewImage = FindViewById<ImageButton>(Resource.Id.ImageButtonViewImage);
-            ImageButtonViewMetrics = FindViewById<ImageButton>(Resource.Id.ImageButtonViewMetrics);
+            ButtonViewAlbum = FindViewById<Button>(Resource.Id.ButtonViewAlbum);
+            ButtonMetrics = FindViewById<Button>(Resource.Id.ButtonMetrics);
         }
 
         private void initializeFontStyle()
@@ -62,17 +63,18 @@ namespace DogWalkies
             dog = dataDogAccess.getDogByID(0);
 
             //Set the ImageView for the dog profile image
-            ImageViewDogProfile.SetImageBitmap(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
+            var bitmapDrawable = new BitmapDrawable(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
+            RelativeLayoutDogProfile.SetBackgroundDrawable(bitmapDrawable);
         }
 
         private void initializeClickEvents()
         {
 
-            ImageButtonViewMetrics.Click += MetricsButton_Click;
+            ButtonMetrics.Click += ButtonMetrics_Click;
             ImageButtonAddDogProfileImage.Click += GrabAPictureFromGallery;
         }
 
-        private void MetricsButton_Click(object sender, EventArgs e)
+        private void ButtonMetrics_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(MetricsActivity));
         }
@@ -121,7 +123,8 @@ namespace DogWalkies
             dataDogAccess.updateDog(dog);
 
             //Re-set the dog profile ImageView
-            ImageViewDogProfile.SetImageBitmap(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
+            var bitmapDrawable = new BitmapDrawable(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
+            RelativeLayoutDogProfile.SetBackgroundDrawable(bitmapDrawable);
         }
     }
 }

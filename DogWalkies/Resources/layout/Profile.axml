@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+   android:id="@+id/profileScrollView"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#152B2F">
+
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    
+    android:layout_height="match_parent"
+    android:background="#152B2F">   
+	
 	<RelativeLayout
         android:maxHeight="60dp"
 		android:padding="5dp"
@@ -11,13 +18,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/RelativeLayoutDogNameBar"
         android:background="#050119">
+		
 		<ImageView
 			android:src="@drawable/pawIcon"
 			android:layout_width="54dp"
 			android:layout_height="54dp"
 			android:id="@+id/ImageViewPawPrintIcon" />
 		<TextView
-			android:text="Rover"
+			android:text="Profile"
 			android:textSize="40dp"
 			android:textColor="#BAD1C9"
 			android:layout_width="200dp"
@@ -30,19 +38,46 @@
 			android:layout_height="54dp"
 			android:layout_alignParentRight="true"
 			android:id="@+id/ImageViewDWIcon" />
-	</RelativeLayout>
+	 </RelativeLayout>
 	
-	<RelativeLayout
+
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/RelativeLayoutDogImage"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:background="@drawable/dogProfileImageMainViewTransparent">
+
+	 <LinearLayout
+		android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/RelativeLayoutDogProfileBar"
+		android:gravity="left"
+        android:id="@+id/LinearLayoutDogProfileImageButtons"
         android:background="#050119">
+		
+		 <TextView
+            android:text="Owner: Loca Boco"
+            android:layout_width="301.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1"
+            android:textSize="20dp"
+            android:paddingTop="12.6dp" />
 		<ImageView
 			android:layout_width="fill_parent"
 			android:layout_height="400dp"
 			android:adjustViewBounds="true"
 			android:scaleType="fitXY"
 			android:id="@+id/ImageViewDogProfile" />
+		<ImageButton
+			android:src="@drawable/editIcon"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_marginTop="350dp"
+			android:layout_alignParentRight="true"
+			android:background="@null"
+			android:id="@+id/ImageButtonEditDogOwnerName" />	
 		<ImageButton
 			android:src="@drawable/addcircleIcon"
 			android:layout_width="48dp"
@@ -51,92 +86,45 @@
 			android:layout_alignParentRight="true"
 			android:background="@null"
 			android:id="@+id/ImageButtonAddDogProfileImage" />
-	</RelativeLayout>
+	</LinearLayout>
+</RelativeLayout>
+
 	
-	<LinearLayout
-            android:orientation="vertical"
+	
+		<TextView
+			android:background="#FFD9D9"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:id="@+id/TexttViewDogInfo" />
+		 <LinearLayout
+            android:orientation="horizantal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="10dp"
-            android:background="#050119" />
-
-
-
-
-
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="53.5dp"
-        android:id="@+id/linearLayout1">
-        <TextView
-            android:text="Owner: Umida Vu"
-            android:layout_width="301.5dp"
-            android:layout_height="match_parent"
-            android:id="@+id/textView1"
-            android:textSize="20dp"
-            android:paddingTop="12.6dp" />
-        <Button
-            android:layout_width="36.5dp"
-            android:layout_height="match_parent"
-            android:id="@+id/button1"
-            android:layout_marginRight="0.0dp"
-            android:layout_marginLeft="0.0dp" />
-        <Button
-            android:layout_width="34.0dp"
-            android:layout_height="match_parent"
-            android:id="@+id/button1"
-            android:layout_marginRight="0.0dp"
-            android:layout_marginLeft="0.0dp" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="47.5dp"
-        android:id="@+id/linearLayout2"
-        android:layout_marginBottom="0.0dp">
-        <Button
+            android:background="#050119" >
+			<ImageButton
+            android:src="@drawable/imageIcon"
             android:text="View Album"
-            android:layout_width="188.0dp"
-            android:layout_height="match_parent"
-            android:id="@+id/button2" />
-        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="350dp"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:id="@+id/ImageButtonViewImage"
+			android:layout_gravity="left"
+            android:layout_margin="10dp" />
+		    <ImageButton
+            android:src="@drawable/infoIcon"
             android:text="Metrics"
-            android:layout_width="188.0dp"
-            android:layout_height="match_parent"
-            android:id="@+id/ButtonMetrics" />
-    </LinearLayout>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="26.5dp"
-        android:id="@+id/editText1" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="32.5dp"
-        android:id="@+id/editText1" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="34.0dp"
-        android:id="@+id/editText1" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="37.5dp"
-        android:id="@+id/editText1" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="30.5dp"
-        android:id="@+id/editText1" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="37.5dp"
-        android:id="@+id/editText1" />
-    <Button
-        android:text="*"
-        android:layout_width="68.0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/button3"
-        android:layout_marginLeft="150dp" />
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="350dp"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:id="@+id/ImageButtonViewImage" 
+            android:layout_gravity="left"
+            android:layout_margin="10dp" />
+		</LinearLayout>
+
 </LinearLayout>
+</ScrollView>

@@ -47,7 +47,7 @@
         android:id="@+id/RelativeLayoutDogImage"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:background="@drawable/dogProfileImageMainViewTransparent">
+        android:background="@drawable/dogProfileImageMainView">
 
 	 <LinearLayout
 		android:orientation="horizontal"
@@ -57,19 +57,21 @@
         android:id="@+id/LinearLayoutDogProfileImageButtons"
         android:background="#050119">
 		
-		 <TextView
-            android:text="Owner: Loca Boco"
-            android:layout_width="301.5dp"
-            android:layout_height="match_parent"
-            android:id="@+id/textView1"
-            android:textSize="20dp"
-            android:paddingTop="12.6dp" />
+		
 		<ImageView
 			android:layout_width="fill_parent"
 			android:layout_height="400dp"
 			android:adjustViewBounds="true"
 			android:scaleType="fitXY"
 			android:id="@+id/ImageViewDogProfile" />
+			 <TextView
+            android:text="Owner: Loca Boco"
+            android:layout_width="301.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/TextViewOwnerName"
+            android:textSize="20dp"
+		  android:textColor="#BAD1C9"
+            android:paddingTop="12.6dp" />
 		<ImageButton
 			android:src="@drawable/editIcon"
 			android:layout_width="48dp"
@@ -88,16 +90,15 @@
 			android:id="@+id/ImageButtonAddDogProfileImage" />
 	</LinearLayout>
 </RelativeLayout>
-
 	
 	
 		<TextView
 			android:background="#FFD9D9"
 			android:layout_width="match_parent"
 			android:layout_height="1dp"
-			android:id="@+id/TexttViewDogInfo" />
+			android:id="@+id/TextViewDogInfo" />
 		 <LinearLayout
-            android:orientation="horizantal"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="10dp"
@@ -105,6 +106,7 @@
 			<ImageButton
             android:src="@drawable/imageIcon"
             android:text="View Album"
+			android:textColor="#BAD1C9"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginTop="350dp"
@@ -116,12 +118,13 @@
 		    <ImageButton
             android:src="@drawable/infoIcon"
             android:text="Metrics"
+			android:textColor="#BAD1C9"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginTop="350dp"
             android:layout_alignParentRight="true"
             android:background="@null"
-            android:id="@+id/ImageButtonViewImage" 
+            android:id="@+id/ImageButtonViewMetrics" 
             android:layout_gravity="left"
             android:layout_margin="10dp" />
 		</LinearLayout>

@@ -17,7 +17,11 @@ namespace DogWalkies
         private TextView TextViewDogFirstName;
         private ImageView ImageViewDogProfile;
         private ImageButton ImageButtonAddDogProfileImage;
-        private Button ButtonMetrics;
+        private ImageButton ImageButtonViewImage;
+        private ImageButton ImageButtonViewMetrics;
+
+
+
 
         private DogAccessLayer dataDogAccess = DogAccessLayer.getInstance();
         private Dog dog;
@@ -45,7 +49,8 @@ namespace DogWalkies
             TextViewDogFirstName = FindViewById<TextView>(Resource.Id.TextViewDogFirstName);
             ImageViewDogProfile = FindViewById<ImageView>(Resource.Id.ImageViewDogProfile);
             ImageButtonAddDogProfileImage = FindViewById<ImageButton>(Resource.Id.ImageButtonAddDogProfileImage);
-            ButtonMetrics = FindViewById<Button>(Resource.Id.ButtonMetrics);
+            ImageButtonViewImage = FindViewById<ImageButton>(Resource.Id.ImageButtonViewImage);
+            ImageButtonViewMetrics = FindViewById<ImageButton>(Resource.Id.ImageButtonViewMetrics);
         }
 
         private void initializeFontStyle()
@@ -65,8 +70,8 @@ namespace DogWalkies
 
         private void initializeClickEvents()
         {
-            
-            ButtonMetrics.Click += MetricsButton_Click;
+
+            ImageButtonViewMetrics.Click += MetricsButton_Click;
             ImageButtonAddDogProfileImage.Click += GrabAPictureFromGallery;
         }
 

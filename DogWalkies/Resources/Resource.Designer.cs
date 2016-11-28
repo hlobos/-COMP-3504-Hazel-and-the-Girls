@@ -123,9 +123,6 @@ namespace DogWalkies
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f05002f
-			public const int ButtonMetrics = 2131034159;
-			
 			// aapt resource value: 0x7f050013
 			public const int ButtonMonth = 2131034131;
 			
@@ -150,8 +147,17 @@ namespace DogWalkies
 			// aapt resource value: 0x7f05000b
 			public const int ImageButtonCamera = 2131034123;
 			
+			// aapt resource value: 0x7f05002d
+			public const int ImageButtonEditDogOwnerName = 2131034157;
+			
 			// aapt resource value: 0x7f050029
 			public const int ImageButtonEditIcon = 2131034153;
+			
+			// aapt resource value: 0x7f05002f
+			public const int ImageButtonViewImage = 2131034159;
+			
+			// aapt resource value: 0x7f050030
+			public const int ImageButtonViewMetrics = 2131034160;
 			
 			// aapt resource value: 0x7f050015
 			public const int ImageViewChart = 2131034133;
@@ -173,6 +179,9 @@ namespace DogWalkies
 			
 			// aapt resource value: 0x7f050002
 			public const int ImageViewPawPrintIcon = 2131034114;
+			
+			// aapt resource value: 0x7f05002b
+			public const int LinearLayoutDogProfileImageButtons = 2131034155;
 			
 			// aapt resource value: 0x7f050011
 			public const int LinearLayoutGraphButtons = 2131034129;
@@ -219,6 +228,9 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050003
 			public const int TextViewDogFirstName = 2131034115;
 			
+			// aapt resource value: 0x7f05002e
+			public const int TextViewDogInfo = 2131034158;
+			
 			// aapt resource value: 0x7f05001c
 			public const int TextViewLastWalked = 2131034140;
 			
@@ -227,6 +239,9 @@ namespace DogWalkies
 			
 			// aapt resource value: 0x7f050027
 			public const int TextViewNotes = 2131034151;
+			
+			// aapt resource value: 0x7f05002c
+			public const int TextViewOwnerName = 2131034156;
 			
 			// aapt resource value: 0x7f050019
 			public const int TextViewReminder = 2131034137;
@@ -246,32 +261,14 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050023
 			public const int TextViewTotalTimeData = 2131034147;
 			
-			// aapt resource value: 0x7f05002c
-			public const int button1 = 2131034156;
-			
-			// aapt resource value: 0x7f05002e
-			public const int button2 = 2131034158;
-			
-			// aapt resource value: 0x7f050031
-			public const int button3 = 2131034161;
-			
-			// aapt resource value: 0x7f050030
-			public const int editText1 = 2131034160;
-			
-			// aapt resource value: 0x7f05002a
-			public const int linearLayout1 = 2131034154;
-			
-			// aapt resource value: 0x7f05002d
-			public const int linearLayout2 = 2131034157;
-			
 			// aapt resource value: 0x7f050000
 			public const int mainScrollView = 2131034112;
 			
 			// aapt resource value: 0x7f05000d
 			public const int metricsScrollView = 2131034125;
 			
-			// aapt resource value: 0x7f05002b
-			public const int textView1 = 2131034155;
+			// aapt resource value: 0x7f05002a
+			public const int profileScrollView = 2131034154;
 			
 			static Id()
 			{

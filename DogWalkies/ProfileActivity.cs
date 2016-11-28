@@ -20,9 +20,6 @@ namespace DogWalkies
         private ImageButton ImageButtonViewImage;
         private ImageButton ImageButtonViewMetrics;
 
-
-
-
         private DogAccessLayer dataDogAccess = DogAccessLayer.getInstance();
         private Dog dog;
         private byte[] dogProfileImage;

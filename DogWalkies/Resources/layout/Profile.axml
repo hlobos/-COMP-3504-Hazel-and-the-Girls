@@ -52,7 +52,7 @@
 				android:textColor="#BAD1C9"
 				android:id="@+id/TextViewOwnerName" />
 			<ImageButton
-				android:src="@drawable/editIcon"
+				android:src="@drawable/editIcon2"
 				android:layout_width="48dp"
 				android:layout_height="48dp"
 				android:layout_marginTop="350dp"
@@ -127,10 +127,48 @@
 			android:text="Sheltie"
 			android:textColor="#FFD9D9"
 			android:textSize="35dp"
+			android:layout_alignParentStart="true"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/TextViewBreedData" />
     </RelativeLayout>
+
+	<TextView
+			android:background="#FFD9D9"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:id="@+id/TextViewBorderTopHack" />
+	<RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:background="#152B2F"
+		android:id="@+id/RelativeLayoutLastWalked">
+		<TextView
+			android:text="Age:"
+			android:textColor="#BAD1C9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:id="@+id/TextViewAge" />
+		<TextView
+			android:text="2 yeas 2 months"
+			android:textColor="#FFD9D9"
+			android:textSize="35dp"
+			android:padding="10dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/TextViewAgeData" />
+    </RelativeLayout>
+
+
+
+
+
+
+
 
 </LinearLayout>
 </ScrollView>

@@ -219,6 +219,12 @@ namespace DogWalkies
 			// aapt resource value: 0x7f05000e
 			public const int RelatvieLayoutDogNameBar = 2131034126;
 			
+			// aapt resource value: 0x7f050031
+			public const int TextViewAge = 2131034161;
+			
+			// aapt resource value: 0x7f050032
+			public const int TextViewAgeData = 2131034162;
+			
 			// aapt resource value: 0x7f050017
 			public const int TextViewBorderTopHack = 2131034135;
 			

@@ -198,6 +198,9 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050001
 			public const int RelativeLayoutDogNameBar = 2131034113;
 			
+			// aapt resource value: 0x7f05002f
+			public const int RelativeLayoutDogProfile = 2131034159;
+			
 			// aapt resource value: 0x7f050005
 			public const int RelativeLayoutDogProfileBar = 2131034117;
 			
@@ -219,29 +222,53 @@ namespace DogWalkies
 			// aapt resource value: 0x7f05000e
 			public const int RelatvieLayoutDogNameBar = 2131034126;
 			
-			// aapt resource value: 0x7f050031
-			public const int TextViewAge = 2131034161;
-			
 			// aapt resource value: 0x7f050032
-			public const int TextViewAgeData = 2131034162;
+			public const int TextViewAge = 2131034162;
+			
+			// aapt resource value: 0x7f050033
+			public const int TextViewAgeData = 2131034163;
+			
+			// aapt resource value: 0x7f050034
+			public const int TextViewBirthdate = 2131034164;
+			
+			// aapt resource value: 0x7f050035
+			public const int TextViewBirthdateData = 2131034165;
 			
 			// aapt resource value: 0x7f050017
 			public const int TextViewBorderTopHack = 2131034135;
 			
-			// aapt resource value: 0x7f05002f
-			public const int TextViewBreed = 2131034159;
-			
 			// aapt resource value: 0x7f050030
-			public const int TextViewBreedData = 2131034160;
+			public const int TextViewBreed = 2131034160;
+			
+			// aapt resource value: 0x7f050031
+			public const int TextViewBreedData = 2131034161;
+			
+			// aapt resource value: 0x7f050036
+			public const int TextViewColor = 2131034166;
+			
+			// aapt resource value: 0x7f050037
+			public const int TextViewColorData = 2131034167;
 			
 			// aapt resource value: 0x7f050003
 			public const int TextViewDogFirstName = 2131034115;
+			
+			// aapt resource value: 0x7f050038
+			public const int TextViewGender = 2131034168;
+			
+			// aapt resource value: 0x7f050039
+			public const int TextViewGenderData = 2131034169;
 			
 			// aapt resource value: 0x7f05001c
 			public const int TextViewLastWalked = 2131034140;
 			
 			// aapt resource value: 0x7f05001d
 			public const int TextViewLastWalkedData = 2131034141;
+			
+			// aapt resource value: 0x7f05003a
+			public const int TextViewMicrochip = 2131034170;
+			
+			// aapt resource value: 0x7f05003b
+			public const int TextViewMicrochipData = 2131034171;
 			
 			// aapt resource value: 0x7f050027
 			public const int TextViewNotes = 2131034151;

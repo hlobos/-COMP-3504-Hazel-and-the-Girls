@@ -43,9 +43,12 @@
         android:id="@+id/RelativeLayoutDogImage"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:background="@drawable/dogProfileImageMainView">
+        android:background="@drawable/dogProfileImageMainView">	
+			
 			<TextView
 				android:text="Owner: Umida Vu"
+				android:layout_marginTop="350dp"
+
 				android:layout_width="300dp"
 				android:layout_height="match_parent"
 				android:textSize="35dp"
@@ -55,8 +58,8 @@
 				android:src="@drawable/editIcon2"
 				android:layout_width="48dp"
 				android:layout_height="48dp"
-				android:layout_marginTop="350dp"
-				android:layout_alignParentRight="true"
+				android:layout_marginTop="350dp"				
+				android:layout_marginLeft="455dp"
 				android:background="@null"
 				android:id="@+id/ImageButtonEditDogOwnerName" />
             <ImageButton
@@ -67,18 +70,19 @@
                 android:layout_alignParentRight="true"
                 android:background="@null"
                 android:id="@+id/ImageButtonAddDogProfileImage" />
+
 	</RelativeLayout>
 	<LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="10dp"
-            android:background="#050119" />  
+            android:background="#050119">
 	<Button
 		android:text="View Album"
 		android:textColor="#FFD9D9"
 		android:textSize="30sp"
-		android:layout_width="380dp"
+		android:layout_width="280dp"
 		android:layout_height="60dp"
 		android:layout_gravity="center"
 		android:layout_margin="10dp"
@@ -92,7 +96,7 @@
 		android:text="Metrics"
 		android:textColor="#FFD9D9"
 		android:textSize="30sp"
-		android:layout_width="380dp"
+		android:layout_width="280dp"
 		android:layout_height="60dp"
 		android:layout_gravity="center"
 		android:layout_margin="10dp"
@@ -102,7 +106,7 @@
 		android:textAllCaps="false"
 		android:drawableLeft="@drawable/infoIcon"
 		android:id="@+id/ButtonMetrics" />
-	
+	</LinearLayout>
 	<TextView
 			android:background="#FFD9D9"
 			android:layout_width="match_parent"
@@ -114,7 +118,7 @@
         android:layout_height="wrap_content"
 		android:padding="10dp"
 		android:background="#152B2F"
-		android:id="@+id/RelativeLayoutLastWalked">
+		android:id="@+id/RelativeLayoutDogProfile">
 		<TextView
 			android:text="Breed:"
 			android:textColor="#BAD1C9"
@@ -122,14 +126,14 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_alignParentLeft="true"
-			android:id="@+id/TextViewBreed" />
+			android:id="@+id/TextViewBreed" />	 
 		<TextView
 			android:text="Sheltie"
 			android:textColor="#FFD9D9"
 			android:textSize="35dp"
-			android:layout_alignParentStart="true"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
 			android:id="@+id/TextViewBreedData" />
     </RelativeLayout>
 
@@ -142,9 +146,9 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-		android:layout_alignParentRight="true"
+		android:padding="10dp"
 		android:background="#152B2F"
-		android:id="@+id/RelativeLayoutLastWalked">
+		android:id="@+id/RelativeLayoutDogProfile">
 		<TextView
 			android:text="Age:"
 			android:textColor="#BAD1C9"
@@ -157,18 +161,126 @@
 			android:text="2 yeas 2 months"
 			android:textColor="#FFD9D9"
 			android:textSize="35dp"
-			android:padding="10dp"
+			android:layout_alignParentRight="true"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/TextViewAgeData" />
     </RelativeLayout>
-
-
-
-
-
-
-
-
+	<TextView
+			android:background="#FFD9D9"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:id="@+id/TextViewBorderTopHack" />
+	<RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:padding="10dp"
+		android:background="#152B2F"
+		android:id="@+id/RelativeLayoutDogProfile">
+		<TextView
+			android:text="Birthday:"
+			android:textColor="#BAD1C9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:id="@+id/TextViewBirthdate" />
+		<TextView
+			android:text="Sept 30th, 2013"
+			android:textColor="#FFD9D9"
+			android:textSize="35dp"
+			android:layout_alignParentRight="true"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/TextViewBirthdateData" />
+    </RelativeLayout>
+	<TextView
+			android:background="#FFD9D9"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:id="@+id/TextViewBorderTopHack" />
+	<RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="#152B2F"
+		android:padding="10dp"
+		android:id="@+id/RelativeLayoutDogProfile">
+		<TextView
+			android:text="Color:"
+			android:textColor="#BAD1C9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:id="@+id/TextViewColor" />
+		<TextView
+			android:text="Sable and White"
+			android:textColor="#FFD9D9"
+			android:textSize="35dp"
+			android:layout_alignParentRight="true"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/TextViewColorData" />
+    </RelativeLayout>
+	<TextView
+			android:background="#FFD9D9"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:id="@+id/TextViewBorderTopHack" />
+	<RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="#152B2F"
+		android:padding="10dp"
+		android:id="@+id/RelativeLayoutDogProfile">
+		<TextView
+			android:text="Gender:"
+			android:textColor="#BAD1C9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:id="@+id/TextViewGender" />
+		<TextView
+			android:text="Male"
+			android:textColor="#FFD9D9"
+			android:textSize="35dp"
+			android:layout_alignParentRight="true"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/TextViewGenderData" />
+    </RelativeLayout>
+	<TextView
+			android:background="#FFD9D9"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:id="@+id/TextViewBorderTopHack" />
+	<RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:background="#152B2F"
+		android:padding="10dp"
+		android:id="@+id/RelativeLayoutDogProfile">
+		<TextView
+			android:text="Microchip:"
+			android:textColor="#BAD1C9"
+			android:textSize="35dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:id="@+id/TextViewMicrochip" />
+		<TextView
+			android:text="22B2S23"
+			android:textColor="#FFD9D9"
+			android:textSize="35dp"
+			android:layout_alignParentRight="true"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/TextViewMicrochipData" />
+    </RelativeLayout>
 </LinearLayout>
 </ScrollView>

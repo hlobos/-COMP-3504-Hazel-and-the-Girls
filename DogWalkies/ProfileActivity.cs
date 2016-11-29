@@ -16,8 +16,24 @@ namespace DogWalkies
     public class ProfileActivity : Activity
     {
         private TextView TextViewDogFirstName;
+        private TextView TextViewOwnerName;
+        private TextView TextViewBreed;
+        private TextView TextViewBreedData;
+        private TextView TextViewAge;
+        private TextView TextViewAgeData;
+        private TextView TextViewBirthdate;
+        private TextView TextViewBirthdateData;
+        private TextView TextViewColor;
+        private TextView TextViewColorData;
+        private TextView TextViewGender;
+        private TextView TextViewGenderData;
+        private TextView TextViewMicrochip;
+        private TextView TextViewMicrochipData;
+
         private RelativeLayout RelativeLayoutDogProfile;
         private ImageButton ImageButtonAddDogProfileImage;
+        private ImageButton ImageButtonEditDogOwnerName;
+
         private Button ButtonViewAlbum;
         private Button ButtonMetrics;
 
@@ -45,17 +61,40 @@ namespace DogWalkies
         private void loadViews()
         {
             TextViewDogFirstName = FindViewById<TextView>(Resource.Id.TextViewDogFirstName);
+            TextViewOwnerName = FindViewById<TextView>(Resource.Id.TextViewOwnerName);
+            TextViewBreed = FindViewById<TextView>(Resource.Id.TextViewBreed);
+            TextViewBreedData = FindViewById<TextView>(Resource.Id.TextViewBreedData);
+            TextViewAge = FindViewById<TextView>(Resource.Id.TextViewAge);
+            TextViewAgeData = FindViewById<TextView>(Resource.Id.TextViewAgeData);
+            TextViewBirthdate = FindViewById<TextView>(Resource.Id.TextViewBirthdate);
+            TextViewBirthdateData = FindViewById<TextView>(Resource.Id.TextViewBirthdateData);
+            TextViewGender = FindViewById<TextView>(Resource.Id.TextViewGender);
+            TextViewGenderData = FindViewById<TextView>(Resource.Id.TextViewGenderData);
+            TextViewMicrochip = FindViewById<TextView>(Resource.Id.TextViewMicrochip);
+            TextViewMicrochipData = FindViewById<TextView>(Resource.Id.TextViewMicrochipData);
             RelativeLayoutDogProfile = FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutDogImage);
             ImageButtonAddDogProfileImage = FindViewById<ImageButton>(Resource.Id.ImageButtonAddDogProfileImage);
             ButtonViewAlbum = FindViewById<Button>(Resource.Id.ButtonViewAlbum);
             ButtonMetrics = FindViewById<Button>(Resource.Id.ButtonMetrics);
-        }
+    }
 
         private void initializeFontStyle()
         {
             Typeface centuryGothic = Typeface.CreateFromAsset(Assets, "centuryGothic.ttf");
-
             TextViewDogFirstName.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewOwnerName.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewBreed.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewBreedData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewAge.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewAgeData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewBirthdate.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewBirthdateData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewGender.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewGenderData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewMicrochip.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewMicrochipData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            ButtonViewAlbum.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            ButtonMetrics.SetTypeface(centuryGothic, TypefaceStyle.Normal);
         }
 
         private void initializeDogProfileImage()
@@ -77,6 +116,12 @@ namespace DogWalkies
         private void ButtonMetrics_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(MetricsActivity));
+        }
+
+
+        private void ButtonViewAlbum_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(MainActivity));
         }
 
         private void GrabAPictureFromGallery(object sender, EventArgs e)

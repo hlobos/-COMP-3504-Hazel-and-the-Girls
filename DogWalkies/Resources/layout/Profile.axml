@@ -48,7 +48,6 @@
 			<TextView
 				android:text="Owner: Umida Vu"
 				android:layout_marginTop="350dp"
-
 				android:layout_width="300dp"
 				android:layout_height="match_parent"
 				android:textSize="35dp"

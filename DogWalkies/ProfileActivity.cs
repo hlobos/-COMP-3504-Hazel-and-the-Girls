@@ -76,7 +76,10 @@ namespace DogWalkies
             ImageButtonAddDogProfileImage = FindViewById<ImageButton>(Resource.Id.ImageButtonAddDogProfileImage);
             ButtonViewAlbum = FindViewById<Button>(Resource.Id.ButtonViewAlbum);
             ButtonMetrics = FindViewById<Button>(Resource.Id.ButtonMetrics);
-    }
+
+
+
+        }
 
         private void initializeFontStyle()
         {
@@ -95,6 +98,7 @@ namespace DogWalkies
             TextViewMicrochipData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonViewAlbum.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonMetrics.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+
         }
 
         private void initializeDogProfileImage()
@@ -118,7 +122,7 @@ namespace DogWalkies
             StartActivity(typeof(MetricsActivity));
         }
 
-
+        
         private void ButtonViewAlbum_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(MainActivity));

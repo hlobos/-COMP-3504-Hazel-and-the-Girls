@@ -117,6 +117,7 @@ namespace DogWalkies
         {
             ButtonMetrics.Click += ButtonMetrics_Click;
             ImageButtonAddDogProfileImage.Click += GrabAPictureFromGallery;
+            ButtonViewAlbum.Click += ButtonViewAlbum_Click;
         }
 
         private void ButtonMetrics_Click(object sender, EventArgs e)
@@ -127,7 +128,11 @@ namespace DogWalkies
         
         private void ButtonViewAlbum_Click(object sender, EventArgs e)
         {
-            //Go to the Dog Walkies Album on the android device
+            Intent intent = new Intent();
+            intent.SetType("image/*");
+            intent.SetAction(Intent.ActionView);
+            intent.SetFlags(ActivityFlags.NewTask);
+            StartActivity(Intent.CreateChooser(intent, "Open folder"));
         }
 
         private void GrabAPictureFromGallery(object sender, EventArgs e)

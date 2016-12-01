@@ -31,7 +31,7 @@ namespace DogWalkies
         private TextView TextViewMicrochip;
         private EditText EditTextMicrochipData;
 
-        private RelativeLayout RelativeLayoutDogProfile;
+        private RelativeLayout RelativeLayoutDogProfileImage;
         private ImageButton ImageButtonAddDogProfileImage;
         private ImageButton ImageButtonEditDogOwnerName;
 
@@ -76,7 +76,7 @@ namespace DogWalkies
             EditTextGenderData = FindViewById<EditText>(Resource.Id.EditTextGenderData);
             TextViewMicrochip = FindViewById<TextView>(Resource.Id.TextViewMicrochip);
             EditTextMicrochipData = FindViewById<EditText>(Resource.Id.EditTextMicrochipData);
-            RelativeLayoutDogProfile = FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutDogImage);
+            RelativeLayoutDogProfileImage = FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutDogProfileImage);
             ImageButtonAddDogProfileImage = FindViewById<ImageButton>(Resource.Id.ImageButtonAddDogProfileImage);
             ButtonViewAlbum = FindViewById<Button>(Resource.Id.ButtonViewAlbum);
             ButtonMetrics = FindViewById<Button>(Resource.Id.ButtonMetrics);
@@ -110,7 +110,7 @@ namespace DogWalkies
 
             //Set the ImageView for the dog profile image
             var bitmapDrawable = new BitmapDrawable(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
-            RelativeLayoutDogProfile.SetBackgroundDrawable(bitmapDrawable);
+            RelativeLayoutDogProfileImage.SetBackgroundDrawable(bitmapDrawable);
         }
 
         private void initializeClickEvents()
@@ -180,7 +180,7 @@ namespace DogWalkies
 
             //Re-set the dog profile ImageView
             var bitmapDrawable = new BitmapDrawable(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
-            RelativeLayoutDogProfile.SetBackgroundDrawable(bitmapDrawable);
+            RelativeLayoutDogProfileImage.SetBackgroundDrawable(bitmapDrawable);
         }
     }
 }

@@ -222,9 +222,6 @@ namespace DogWalkies
 			// aapt resource value: 0x7f05000a
 			public const int RelativeLayoutCameraBar = 2131034122;
 			
-			// aapt resource value: 0x7f050010
-			public const int RelativeLayoutDogImage = 2131034128;
-			
 			// aapt resource value: 0x7f050001
 			public const int RelativeLayoutDogNameBar = 2131034113;
 			
@@ -233,6 +230,9 @@ namespace DogWalkies
 			
 			// aapt resource value: 0x7f050005
 			public const int RelativeLayoutDogProfileBar = 2131034117;
+			
+			// aapt resource value: 0x7f050010
+			public const int RelativeLayoutDogProfileImage = 2131034128;
 			
 			// aapt resource value: 0x7f05001b
 			public const int RelativeLayoutLastWalked = 2131034139;

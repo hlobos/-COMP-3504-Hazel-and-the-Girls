@@ -46,6 +46,15 @@ namespace DogWalkies
             initializeClickEvents();
         }
 
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            //Refresh the dog profile image, it may have been changed via ProfileView Activity
+            dog = dataDogAccess.getDogByID(0);
+            ImageViewDogProfile.SetImageBitmap(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
+        }
+
         private void loadViews()
         {
             TextViewDogFirstName = FindViewById<TextView>(Resource.Id.TextViewDogFirstName);

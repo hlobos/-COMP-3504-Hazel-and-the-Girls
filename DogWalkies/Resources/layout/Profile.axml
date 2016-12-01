@@ -40,18 +40,18 @@
 	<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:id="@+id/RelativeLayoutDogImage"
+        android:id="@+id/RelativeLayoutDogProfileImage"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:background="@drawable/dogProfileImageMainView">	
 			<RelativeLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-			android:paddingTop="2dp"
-            android:layout_marginTop="350dp"
-			android:focusableInTouchMode="true"
-			android:background="#99050119">
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingTop="2dp"
+				android:layout_marginTop="350dp"
+				android:focusableInTouchMode="true"
+				android:background="#99050119">
 				<TextView
 					android:text="Owner:"
 					android:layout_width="wrap_content"

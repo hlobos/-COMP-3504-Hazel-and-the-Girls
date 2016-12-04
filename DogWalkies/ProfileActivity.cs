@@ -42,6 +42,9 @@ namespace DogWalkies
         private byte[] dogProfileImage;
 
         private int REQUEST_PICK_IMAGE = 1;
+        //private int REQUEST_EDIT_INFO = 1;
+
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -76,9 +79,6 @@ namespace DogWalkies
             ImageButtonAddDogProfileImage = FindViewById<ImageButton>(Resource.Id.ImageButtonAddDogProfileImage);
             ButtonViewAlbum = FindViewById<Button>(Resource.Id.ButtonViewAlbum);
             ButtonMetrics = FindViewById<Button>(Resource.Id.ButtonMetrics);
-
-
-
         }
 
         private void initializeFontStyle()
@@ -115,6 +115,7 @@ namespace DogWalkies
 
             ButtonMetrics.Click += ButtonMetrics_Click;
             ImageButtonAddDogProfileImage.Click += GrabAPictureFromGallery;
+           // ImageButtonEditDogOwnerName.Click += EditDogProfile;
         }
 
         private void ButtonMetrics_Click(object sender, EventArgs e)
@@ -134,6 +135,7 @@ namespace DogWalkies
             intent.SetType("image/*");
             intent.SetAction(Intent.ActionGetContent);
             StartActivityForResult(Intent.CreateChooser(intent, "Select Picture"), REQUEST_PICK_IMAGE);
+            
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -156,6 +158,9 @@ namespace DogWalkies
             }
         }
 
+
+       
+
         private void UpdateDogProfileImageFromIntentData(Intent data)
         {
             //Uri --> Bitmap
@@ -175,5 +180,10 @@ namespace DogWalkies
             var bitmapDrawable = new BitmapDrawable(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
             RelativeLayoutDogProfile.SetBackgroundDrawable(bitmapDrawable);
         }
-    }
+
+       
+
+
+
+        }
 }

@@ -70,8 +70,11 @@
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
+			android:paddingLeft="10dp"
+			android:paddingRight="5dp"
             android:background="@drawable/button"
             android:textAllCaps="false"
+			android:drawableLeft="@drawable/pawIconSmall"
             android:id="@+id/ButtonProfile" />
         <Button
             android:text="Start Walk"
@@ -81,8 +84,11 @@
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
+			android:paddingLeft="5dp"
+			android:paddingRight="5dp"
             android:background="@drawable/button"
             android:textAllCaps="false"
+			android:drawableLeft="@drawable/walkIcon"
             android:id="@+id/ButtonStartWalk" />
         <RelativeLayout
             android:padding="5dp"

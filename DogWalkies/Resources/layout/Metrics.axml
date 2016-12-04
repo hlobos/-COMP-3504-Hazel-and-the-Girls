@@ -41,61 +41,67 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:id="@+id/RelativeLayoutDogImage"
+        android:id="@+id/RelativeLayoutDogProfileImage"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:background="@drawable/dogProfileImageMainViewTransparent">
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-			android:gravity="center"
-			android:paddingTop="10dp"
-			android:paddingBottom="0dp"
-            android:id="@+id/LinearLayoutGraphButtons">
-            <Button
-                android:text="Week"
-				android:textSize="30dp"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:textColor="#FFD9D9"
-                android:textAllCaps="false"
-				android:layout_marginLeft="10dp"
-				android:layout_marginRight="10dp"
-                android:background="@drawable/buttonMini"
-                android:id="@+id/ButtonWeek" />
-            <Button
-                android:text="Month"
-				android:textSize="30dp"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:textColor="#FFD9D9"
-                android:textAllCaps="false"
-				android:layout_marginLeft="10dp"
-				android:layout_marginRight="10dp"
-                android:background="@drawable/buttonMini"
-                android:id="@+id/ButtonMonth" />
-            <Button
-                android:text="Year"
-				android:textSize="30dp"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:textColor="#FFD9D9"
-                android:textAllCaps="false"
-				android:layout_marginLeft="10dp"
-				android:layout_marginRight="10dp"
-                android:background="@drawable/buttonMini"
-                android:id="@+id/ButtonYear" />
-        </LinearLayout>
-		<ImageView
-			android:src="@drawable/chart"
+        android:background="@drawable/dogProfileImageMainView">
+		<RelativeLayout
+			android:orientation="horizontal"
 			android:layout_width="match_parent"
-			android:layout_height="400dp"
-			android:layout_margin="20dp"
-			android:layout_marginTop="100dp"
-			android:layout_marginBottom="0dp"
-			android:id="@+id/ImageViewChart" />
-    </RelativeLayout>
+			android:layout_height="match_parent"
+			android:background="#CC050119">
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:paddingTop="10dp"
+				android:paddingBottom="0dp"
+				android:id="@+id/LinearLayoutGraphButtons">
+				<Button
+					android:text="Week"
+					android:textSize="30dp"
+					android:layout_width="120dp"
+					android:layout_height="40dp"
+					android:textColor="#FFD9D9"
+					android:textAllCaps="false"
+					android:layout_marginLeft="10dp"
+					android:layout_marginRight="10dp"
+					android:background="@drawable/buttonMini"
+					android:id="@+id/ButtonWeek" />
+				<Button
+					android:text="Month"
+					android:textSize="30dp"
+					android:layout_width="120dp"
+					android:layout_height="40dp"
+					android:textColor="#FFD9D9"
+					android:textAllCaps="false"
+					android:layout_marginLeft="10dp"
+					android:layout_marginRight="10dp"
+					android:background="@drawable/buttonMini"
+					android:id="@+id/ButtonMonth" />
+				<Button
+					android:text="Year"
+					android:textSize="30dp"
+					android:layout_width="120dp"
+					android:layout_height="40dp"
+					android:textColor="#FFD9D9"
+					android:textAllCaps="false"
+					android:layout_marginLeft="10dp"
+					android:layout_marginRight="10dp"
+					android:background="@drawable/buttonMini"
+					android:id="@+id/ButtonYear" />
+			</LinearLayout>
+			<ImageView
+				android:src="@drawable/chart"
+				android:layout_width="match_parent"
+				android:layout_height="400dp"
+				android:layout_margin="20dp"
+				android:layout_marginTop="100dp"
+				android:layout_marginBottom="0dp"
+				android:id="@+id/ImageViewChart" />
+		</RelativeLayout>
+	</RelativeLayout>
 
 	<LinearLayout
 		android:orientation="vertical"

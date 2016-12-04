@@ -60,6 +60,7 @@
     <Compile Include="Adapters\DogAdapter.cs" />
     <Compile Include="DataLayer\Dog.cs" />
     <Compile Include="DataLayer\DogAccessLayer.cs" />
+    <Compile Include="Interface\DatePickerFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MetricsActivity.cs" />
     <Compile Include="ProfileActivity.cs" />
@@ -158,6 +159,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dogProfileImageMainViewTransparent.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\editcircleIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\walkIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\pawIconSmall.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

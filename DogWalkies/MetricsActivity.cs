@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Android.Graphics;
+using Android.Graphics.Drawables;
 
 namespace DogWalkies
 {
@@ -25,6 +26,12 @@ namespace DogWalkies
         private Button ButtonMonth;
         private Button ButtonYear;
         private Button ButtonWalkReminder;
+        private TextView _dateDisplay;
+        private Button _dateSelectButton;
+
+        private DogAccessLayer dataDogAccess = DogAccessLayer.getInstance();
+        private Dog dog;
+        private RelativeLayout RelativeLayoutDogProfileImage;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -37,7 +44,12 @@ namespace DogWalkies
 
             loadViews();
             initializeFontStyle();
+            initializeDogProfileImage();
             initializeClickEvents();
+
+            /*_dateDisplay = FindViewById<TextView>(Resource.Id.date_display);
+            _dateSelectButton = FindViewById<Button>(Resource.Id.date_select_button);
+            _dateSelectButton.Click += DateSelect_OnClick;*/
         }
 
         private void loadViews()
@@ -56,6 +68,7 @@ namespace DogWalkies
             ButtonMonth = FindViewById<Button>(Resource.Id.ButtonMonth);
             ButtonYear = FindViewById<Button>(Resource.Id.ButtonYear);
             ButtonWalkReminder = FindViewById<Button>(Resource.Id.ButtonWalkReminder);
+            RelativeLayoutDogProfileImage = FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutDogProfileImage);
         }
 
         private void initializeClickEvents()
@@ -87,5 +100,25 @@ namespace DogWalkies
             ButtonYear.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonWalkReminder.SetTypeface(centuryGothic, TypefaceStyle.Normal);
         }
+
+        private void initializeDogProfileImage()
+        {
+            dog = dataDogAccess.getDogByID(0);
+
+            //Set the ImageView for the dog profile image
+            var bitmapDrawable = new BitmapDrawable(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
+            RelativeLayoutDogProfileImage.SetBackgroundDrawable(bitmapDrawable);
+        }
+
+        /*public void DateSelect_OnClick(object sender, EventArgs eventArgs)
+        {
+            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+            {
+                _dateDisplay.Text = time.ToLongDateString();
+            });
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
+        }*/
+
+
     }
 }

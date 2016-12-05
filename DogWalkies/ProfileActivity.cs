@@ -60,8 +60,10 @@ namespace DogWalkies
             initializeFontStyle();
             initializeDogProfileImage();
             initializeClickEvents();
+            initializeTextViewData();
         }
 
+        
         private void loadViews()
         {
             TextViewDogFirstName = FindViewById<TextView>(Resource.Id.TextViewDogFirstName);
@@ -126,6 +128,13 @@ namespace DogWalkies
             ButtonViewAlbum.Click += ButtonViewAlbum_Click;
 
         }
+        private void initializeTextViewData()
+        {
+            dog = dataDogAccess.getDogByID(0);
+
+            EditTextOwnerNameData.Text = dog.OwnerName;
+        }
+
 
         private void ButtonMetrics_Click(object sender, EventArgs e)
         {
@@ -193,9 +202,6 @@ namespace DogWalkies
             var bitmapDrawable = new BitmapDrawable(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
             RelativeLayoutDogProfileImage.SetBackgroundDrawable(bitmapDrawable);
         }
-
-       
-
 
 
         }

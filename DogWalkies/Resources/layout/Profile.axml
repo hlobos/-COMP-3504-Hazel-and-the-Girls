@@ -142,7 +142,7 @@
 		android:background="#152B2F"
 		android:id="@+id/RelativeLayoutDogProfile">
 		<TextView
-			android:text="Breed:"
+			
 			android:textColor="#BAD1C9"
 			android:textSize="35dp"
 			android:layout_width="wrap_content"
@@ -150,7 +150,7 @@
 			android:layout_alignParentLeft="true"
 			android:id="@+id/TextViewBreed" />	 
 		<EditText
-			android:text="Sheltie"
+			
 			android:textColor="#FFD9D9"
 			android:textSize="35dp"
 			android:layout_marginLeft="180dp"
@@ -173,7 +173,7 @@
 		android:background="#152B2F"
 		android:id="@+id/RelativeLayoutDogProfile">
 		<TextView
-			android:text="Age:"
+			
 			android:textColor="#BAD1C9"
 			android:textSize="35dp"
 			android:layout_width="wrap_content"
@@ -204,7 +204,7 @@
 		android:background="#152B2F"
 		android:id="@+id/RelativeLayoutDogProfile">
 		<TextView
-			android:text="Birthday:"
+			
 			android:textColor="#BAD1C9"
 			android:textSize="35dp"
 			android:layout_width="wrap_content"
@@ -235,7 +235,7 @@
 		android:padding="10dp"
 		android:id="@+id/RelativeLayoutDogProfile">
 		<TextView
-			android:text="Color:"
+			
 			android:textColor="#BAD1C9"
 			android:textSize="35dp"
 			android:layout_width="wrap_content"
@@ -266,7 +266,7 @@
 		android:padding="10dp"
 		android:id="@+id/RelativeLayoutDogProfile">
 		<TextView
-			android:text="Gender:"
+			
 			android:textColor="#BAD1C9"
 			android:textSize="35dp"
 			android:layout_width="wrap_content"
@@ -297,7 +297,7 @@
 		android:padding="10dp"
 		android:id="@+id/RelativeLayoutDogProfile">
 		<TextView
-			android:text="Microchip:"
+		
 			android:textColor="#BAD1C9"
 			android:textSize="35dp"
 			android:layout_width="wrap_content"

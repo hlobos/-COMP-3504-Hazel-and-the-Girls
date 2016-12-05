@@ -5,6 +5,7 @@ using Android.Views;
 using Android.Widget;
 using Android.Graphics;
 using Android.Graphics.Drawables;
+using DogWalkies.Interface;
 
 namespace DogWalkies
 {
@@ -22,6 +23,8 @@ namespace DogWalkies
         private TextView TextViewTotalTimeData;
         private TextView TextViewReminder;
         private TextView TextViewReminderData;
+        private TextView TextViewReminderTime;
+        private TextView TextViewReminderTimeData;
         private Button ButtonWeek;
         private Button ButtonMonth;
         private Button ButtonYear;
@@ -47,9 +50,9 @@ namespace DogWalkies
             initializeDogProfileImage();
             initializeClickEvents();
 
-            /*_dateDisplay = FindViewById<TextView>(Resource.Id.date_display);
-            _dateSelectButton = FindViewById<Button>(Resource.Id.date_select_button);
-            _dateSelectButton.Click += DateSelect_OnClick;*/
+            _dateDisplay = FindViewById<TextView>(Resource.Id.TextViewReminderData);
+            //_dateSelectButton = FindViewById<Button>(Resource.Id.date_select_button);
+            //_dateSelectButton.Click += DateSelect_OnClick;
         }
 
         private void loadViews()
@@ -64,6 +67,8 @@ namespace DogWalkies
             TextViewTotalTimeData = FindViewById<TextView>(Resource.Id.TextViewTotalTimeData);
             TextViewReminder = FindViewById<TextView>(Resource.Id.TextViewReminder);
             TextViewReminderData = FindViewById<TextView>(Resource.Id.TextViewReminderData);
+            TextViewReminderTime = FindViewById<TextView>(Resource.Id.TextViewReminderTime);
+            TextViewReminderTimeData = FindViewById<TextView>(Resource.Id.TextViewReminderTimeData);
             ButtonWeek = FindViewById<Button>(Resource.Id.ButtonWeek);
             ButtonMonth = FindViewById<Button>(Resource.Id.ButtonMonth);
             ButtonYear = FindViewById<Button>(Resource.Id.ButtonYear);
@@ -76,9 +81,13 @@ namespace DogWalkies
             ButtonWalkReminder.Click += ButtonWalkReminder_Click;
         }
 
-        private void ButtonWalkReminder_Click(object sender, EventArgs e)
+        public void ButtonWalkReminder_Click(object sender, EventArgs e)
         {
-            //Create Dialogue
+            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+            {
+                _dateDisplay.Text = time.ToLongDateString();
+            });
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
         }
 
         private void initializeFontStyle()
@@ -95,10 +104,13 @@ namespace DogWalkies
             TextViewTotalTimeData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             TextViewReminder.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             TextViewReminderData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewReminderTime.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewReminderTimeData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonWeek.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonMonth.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonYear.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonWalkReminder.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+
         }
 
         private void initializeDogProfileImage()
@@ -109,16 +121,6 @@ namespace DogWalkies
             var bitmapDrawable = new BitmapDrawable(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
             RelativeLayoutDogProfileImage.SetBackgroundDrawable(bitmapDrawable);
         }
-
-        /*public void DateSelect_OnClick(object sender, EventArgs eventArgs)
-        {
-            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
-            {
-                _dateDisplay.Text = time.ToLongDateString();
-            });
-            frag.Show(FragmentManager, DatePickerFragment.TAG);
-        }*/
-
 
     }
 }

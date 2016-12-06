@@ -112,7 +112,7 @@
 	</LinearLayout>
 
    <Button
-        android:text="Add Walk Reminder"
+        android:text="Set Walk Day"
         android:textColor="#FFD9D9"
 		android:textSize="30sp"
 		android:layout_width="380dp"
@@ -124,7 +124,21 @@
 		android:background="@drawable/button" 
 		android:textAllCaps="false"
 		android:drawableLeft="@drawable/editIcon"
-        android:id="@+id/ButtonWalkReminder" />
+        android:id="@+id/ButtonWalkReminderDay" />
+	<Button
+        android:text="Set Walk Time"
+        android:textColor="#FFD9D9"
+		android:textSize="30sp"
+		android:layout_width="380dp"
+		android:layout_height="60dp"
+		android:layout_gravity="center"
+		android:layout_margin="10dp"
+		android:paddingLeft="5dp"
+		android:paddingRight="5dp"
+		android:background="@drawable/button" 
+		android:textAllCaps="false"
+		android:drawableLeft="@drawable/editIcon"
+        android:id="@+id/ButtonWalkReminderTime" />
 
 	<TextView
 			android:background="#FFD9D9"
@@ -171,7 +185,6 @@
 			android:layout_alignParentLeft="true"
 			android:id="@+id/TextViewReminderTime" />
 		<TextView
-			android:text="6:00PM"
 			android:textColor="#FFD9D9"
 			android:textSize="35dp"
 			android:layout_width="wrap_content"

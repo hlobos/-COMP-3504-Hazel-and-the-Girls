@@ -28,9 +28,13 @@ namespace DogWalkies
         private Button ButtonWeek;
         private Button ButtonMonth;
         private Button ButtonYear;
-        private Button ButtonWalkReminder;
-        private TextView _dateDisplay;
-        private Button _dateSelectButton;
+        private Button ButtonWalkReminderDay;
+        private Button ButtonWalkReminderTime;
+        private TextView _dateDisplayDay;
+        private TextView _dateDisplayTime;
+        private int hour;
+        private int minute;
+        const int TIME_DIALOG_ID = 0;
 
         private DogAccessLayer dataDogAccess = DogAccessLayer.getInstance();
         private Dog dog;
@@ -50,9 +54,13 @@ namespace DogWalkies
             initializeDogProfileImage();
             initializeClickEvents();
 
-            _dateDisplay = FindViewById<TextView>(Resource.Id.TextViewReminderData);
-            //_dateSelectButton = FindViewById<Button>(Resource.Id.date_select_button);
-            //_dateSelectButton.Click += DateSelect_OnClick;
+            _dateDisplayDay = FindViewById<TextView>(Resource.Id.TextViewReminderData);
+            _dateDisplayTime = FindViewById<TextView>(Resource.Id.TextViewReminderTimeData);
+
+            ButtonWalkReminderTime.Click += (o, e) => ShowDialog(TIME_DIALOG_ID);
+
+            hour = DateTime.Now.Hour;
+            minute = DateTime.Now.Minute;
         }
 
         private void loadViews()
@@ -72,22 +80,36 @@ namespace DogWalkies
             ButtonWeek = FindViewById<Button>(Resource.Id.ButtonWeek);
             ButtonMonth = FindViewById<Button>(Resource.Id.ButtonMonth);
             ButtonYear = FindViewById<Button>(Resource.Id.ButtonYear);
-            ButtonWalkReminder = FindViewById<Button>(Resource.Id.ButtonWalkReminder);
+            ButtonWalkReminderDay = FindViewById<Button>(Resource.Id.ButtonWalkReminderDay);
+            ButtonWalkReminderTime = FindViewById<Button>(Resource.Id.ButtonWalkReminderTime);
             RelativeLayoutDogProfileImage = FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutDogProfileImage);
         }
 
         private void initializeClickEvents()
         {
-            ButtonWalkReminder.Click += ButtonWalkReminder_Click;
+            ButtonWalkReminderDay.Click += ButtonWalkReminderDay_Click;
         }
 
-        public void ButtonWalkReminder_Click(object sender, EventArgs e)
+        private void updateDisplay()
+        {
+            string time = string.Format("{0}:{1}", hour, minute.ToString().PadLeft(2, '0'));
+            _dateDisplayTime.Text = time;
+        }
+
+        public void ButtonWalkReminderDay_Click(object sender, EventArgs e)
         {
             DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
             {
-                _dateDisplay.Text = time.ToLongDateString();
+                _dateDisplayDay.Text = time.ToLongDateString();
             });
             frag.Show(FragmentManager, DatePickerFragment.TAG);
+        }
+
+        private void TimePickerCallback(object sender, TimePickerDialog.TimeSetEventArgs e)
+        {
+            hour = e.HourOfDay;
+            minute = e.Minute;
+            updateDisplay();
         }
 
         private void initializeFontStyle()
@@ -109,7 +131,8 @@ namespace DogWalkies
             ButtonWeek.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonMonth.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonYear.SetTypeface(centuryGothic, TypefaceStyle.Normal);
-            ButtonWalkReminder.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            ButtonWalkReminderDay.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            ButtonWalkReminderTime.SetTypeface(centuryGothic, TypefaceStyle.Normal);
 
         }
 
@@ -120,6 +143,14 @@ namespace DogWalkies
             //Set the ImageView for the dog profile image
             var bitmapDrawable = new BitmapDrawable(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
             RelativeLayoutDogProfileImage.SetBackgroundDrawable(bitmapDrawable);
+        }
+
+        protected override Dialog OnCreateDialog(int id)
+        {
+            if (id == TIME_DIALOG_ID)
+                return new TimePickerDialog(this, TimePickerCallback, hour, minute, false);
+
+            return null;
         }
 
     }

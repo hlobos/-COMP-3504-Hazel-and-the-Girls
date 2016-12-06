@@ -100,22 +100,18 @@ namespace DogWalkies
         public void ButtonWalkReminderDay_Click(object sender, EventArgs e)
         {
             DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
-            {
-<<<<<<< HEAD
+            { 
 
                 _dateDisplayDay.Text = time.ToLongDateString();
 
-                _dateDisplay.Text = time.ToLongDateString();
-=======
-                _dateDisplayDay.Text = time.ToLongDateString();
           
             });
->>>>>>> origin/master
+
 
 
 
                 frag.Show(FragmentManager, DatePickerFragment.TAG);
-            }
+            
 
             //updateDatabaseAndSetDogWalkReminder();
         }
@@ -178,10 +174,6 @@ namespace DogWalkies
             RelativeLayoutDogProfileImage.SetBackgroundDrawable(bitmapDrawable);
         }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
         protected override Dialog OnCreateDialog(int id)
         {
             if (id == TIME_DIALOG_ID)
@@ -207,9 +199,5 @@ namespace DogWalkies
             AlarmManager alarm = (AlarmManager)GetSystemService(AlarmService);
             alarm.Set(AlarmType.RtcWakeup, wakeUpAt, pendingIntent);
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
     }
 }

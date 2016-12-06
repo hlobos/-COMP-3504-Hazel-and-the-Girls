@@ -1,4 +1,5 @@
 using SQLite;
+using System;
 
 namespace DogWalkies
 {
@@ -25,8 +26,7 @@ namespace DogWalkies
 
         public string Microchip { get; set; }
 
-
-
+        public DateTime WalkReminder { get; set; }
 
         public Dog() { } // must have a default constructor to use SQLite methods 
 

@@ -33,7 +33,7 @@ namespace DogWalkies
 
         private RelativeLayout RelativeLayoutDogProfileImage;
         private ImageButton ImageButtonAddDogProfileImage;
-        //private ImageButton ImageButtonEditDogOwnerName;
+        private ImageButton ImageButtonEditDogprofile;
 
         private Button ButtonViewAlbum;
         private Button ButtonMetrics;
@@ -43,7 +43,7 @@ namespace DogWalkies
         private byte[] dogProfileImage;
 
         private int REQUEST_PICK_IMAGE = 1;
-        //private int REQUEST_EDIT_INFO = 1;
+        
 
 
 
@@ -83,6 +83,7 @@ namespace DogWalkies
             EditTextMicrochipData = FindViewById<EditText>(Resource.Id.EditTextMicrochipData);
             RelativeLayoutDogProfileImage = FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutDogProfileImage);
             ImageButtonAddDogProfileImage = FindViewById<ImageButton>(Resource.Id.ImageButtonAddDogProfileImage);
+            ImageButtonEditDogprofile = FindViewById<ImageButton>(Resource.Id.ImageButtonEditDogprofile);
             ButtonViewAlbum = FindViewById<Button>(Resource.Id.ButtonViewAlbum);
             ButtonMetrics = FindViewById<Button>(Resource.Id.ButtonMetrics);
         }
@@ -122,12 +123,11 @@ namespace DogWalkies
         {
             ButtonMetrics.Click += ButtonMetrics_Click;
             ImageButtonAddDogProfileImage.Click += GrabAPictureFromGallery;
-
-           // ImageButtonEditDogOwnerName.Click += EditDogProfile;
-
             ButtonViewAlbum.Click += ButtonViewAlbum_Click;
-
+            ImageButtonEditDogprofile.Click += DisplayAlertDialog;
         }
+
+
         private void initializeTextViewData()
         {
            
@@ -145,7 +145,6 @@ namespace DogWalkies
         {
             StartActivity(typeof(MetricsActivity));
         }
-
         
         private void ButtonViewAlbum_Click(object sender, EventArgs e)
         {
@@ -161,10 +160,47 @@ namespace DogWalkies
             Intent intent = new Intent();
             intent.SetType("image/*");
             intent.SetAction(Intent.ActionGetContent);
-            StartActivityForResult(Intent.CreateChooser(intent, "Select Picture"), REQUEST_PICK_IMAGE);
-            
+            StartActivityForResult(Intent.CreateChooser(intent, "Select Picture"), REQUEST_PICK_IMAGE);           
         }
 
+        private void DisplayAlertDialog(object sender, EventArgs e)
+        {
+           
+            Android.App.AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog alertDialog = builder.Create();
+            alertDialog.SetTitle("Confirmation");
+            alertDialog.SetMessage("Are you sure to change your dog profile?");
+            alertDialog.SetButton("YES", (s,ev)=>
+            {
+                //save new information
+                
+                dog.OwnerName = EditTextOwnerNameData.Text;
+                dog.Breed = EditTextBreedData.Text;
+                dog.Age = EditTextAgeData.Text;
+                dog.Birthdate = EditTextBirthdateData.Text;
+                dog.Color = EditTextColorData.Text;
+                dog.Gender = EditTextGenderData.Text;
+                dog.Microchip = EditTextMicrochipData.Text;
+
+
+                dataDogAccess.updateDog(dog);
+                Toast.MakeText(this, "saved", ToastLength.Short).Show();
+
+            });
+
+            alertDialog.SetButton2("NO", (s,ev)=>
+            {
+                // restore default dog information
+                initializeTextViewData();
+                
+            });
+
+            alertDialog.Show();
+
+
+        }
+
+        
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
@@ -185,8 +221,7 @@ namespace DogWalkies
             }
         }
 
-
-       
+        
 
         private void UpdateDogProfileImageFromIntentData(Intent data)
         {

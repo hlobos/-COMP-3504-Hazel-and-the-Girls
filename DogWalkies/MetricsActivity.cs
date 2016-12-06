@@ -35,6 +35,8 @@ namespace DogWalkies
         private TextView _dateDisplayTime;
         private int hour;
         private int minute;
+       
+
         const int TIME_DIALOG_ID = 0;
 
         private DogAccessLayer dataDogAccess = DogAccessLayer.getInstance();
@@ -62,6 +64,7 @@ namespace DogWalkies
 
             hour = DateTime.Now.Hour;
             minute = DateTime.Now.Minute;
+            
         }
 
         private void loadViews()
@@ -93,6 +96,7 @@ namespace DogWalkies
 
         private void updateDisplay()
         {
+  
             string time = string.Format("{0}:{1}", hour, minute.ToString().PadLeft(2, '0'));
             _dateDisplayTime.Text = time;
         }
@@ -106,10 +110,6 @@ namespace DogWalkies
 
           
             });
-
-
-
-
                 frag.Show(FragmentManager, DatePickerFragment.TAG);
             
 

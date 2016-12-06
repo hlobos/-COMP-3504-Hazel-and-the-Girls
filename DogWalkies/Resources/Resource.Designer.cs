@@ -187,7 +187,7 @@ namespace DogWalkies
 			public const int ImageButtonCamera = 2131034123;
 			
 			// aapt resource value: 0x7f050031
-			public const int ImageButtonEditDogOwnerName = 2131034161;
+			public const int ImageButtonEditDogprofile = 2131034161;
 			
 			// aapt resource value: 0x7f05002d
 			public const int ImageButtonEditIcon = 2131034157;

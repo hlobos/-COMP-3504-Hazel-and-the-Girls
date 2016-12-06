@@ -162,7 +162,7 @@
 			android:id="@+id/TextViewReminder" />
 		<TextView
 			android:textColor="#FFD9D9"
-			android:textSize="35dp"
+			android:textSize="30dp"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_alignParentRight="true"

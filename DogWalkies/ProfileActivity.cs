@@ -130,9 +130,14 @@ namespace DogWalkies
         }
         private void initializeTextViewData()
         {
-            dog = dataDogAccess.getDogByID(0);
-
+           
             EditTextOwnerNameData.Text = dog.OwnerName;
+            EditTextBreedData.Text = dog.Breed;
+            EditTextAgeData.Text = dog.Age;
+            EditTextBirthdateData.Text = dog.Birthdate;
+            EditTextColorData.Text = dog.Color;
+            EditTextGenderData.Text = dog.Gender;
+            EditTextMicrochipData.Text = dog.Microchip;
         }
 
 

@@ -200,7 +200,7 @@ namespace DogWalkies
             dogProfileImage = stream.ToArray();
 
             //Create Dog and add to database
-            dog = new Dog("Rover", "", dogProfileImage);
+            dog = new Dog("Rover", "Your Name", dogProfileImage, "Sheltie", "2 Years 2 Months", "Sept 10, 2014", "Sable and White", "Male", "22B2S23");
             dataDogAccess.addDog(dog);
         }
 

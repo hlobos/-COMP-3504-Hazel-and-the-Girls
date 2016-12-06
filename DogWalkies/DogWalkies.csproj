@@ -63,6 +63,7 @@
     <Compile Include="Interface\DatePickerFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MetricsActivity.cs" />
+    <Compile Include="NotificationPublisher.cs" />
     <Compile Include="ProfileActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

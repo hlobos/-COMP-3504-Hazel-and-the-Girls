@@ -6,6 +6,7 @@ using Android.Widget;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using DogWalkies.Interface;
+using Android.Content;
 
 namespace DogWalkies
 {
@@ -100,9 +101,35 @@ namespace DogWalkies
         {
             DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
             {
+<<<<<<< HEAD
                 _dateDisplayDay.Text = time.ToLongDateString();
+=======
+                _dateDisplay.Text = time.ToLongDateString();
+          
+>>>>>>> origin/master
             });
+
             frag.Show(FragmentManager, DatePickerFragment.TAG);
+
+            //updateDatabaseAndSetDogWalkReminder();
+        }
+
+        private void updateDatabaseAndSetDogWalkReminder(string dateOrTime, DateTime time)
+        {
+            //Grab the Date and Time from EditViews
+            if (dateOrTime == "date")
+            {
+                //grab the Day/Month/Year
+            }
+            else if (dateOrTime == "time") {
+                //grab the Hour/Minute
+            }
+
+            //Create a new dateTime
+
+            //Update the WalkReminder DateTime in the database to this new value
+
+            //setReminder();
         }
 
         private void TimePickerCallback(object sender, TimePickerDialog.TimeSetEventArgs e)
@@ -145,6 +172,7 @@ namespace DogWalkies
             RelativeLayoutDogProfileImage.SetBackgroundDrawable(bitmapDrawable);
         }
 
+<<<<<<< HEAD
         protected override Dialog OnCreateDialog(int id)
         {
             if (id == TIME_DIALOG_ID)
@@ -153,5 +181,23 @@ namespace DogWalkies
             return null;
         }
 
+=======
+        private void setReminder() {
+            dog = dataDogAccess.getDogByID(0);
+
+            DateTime date = dog.WalkReminder;
+            TimeSpan span = (date - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc));
+
+            long wakeUpAt = (long)span.TotalMilliseconds;
+
+            NotificationPublisher publisher = new NotificationPublisher();
+
+            Intent intent = new Intent(ApplicationContext, publisher.GetType());
+            PendingIntent pendingIntent = PendingIntent.GetBroadcast(ApplicationContext, 100, intent, PendingIntentFlags.UpdateCurrent);
+
+            AlarmManager alarm = (AlarmManager)GetSystemService(AlarmService);
+            alarm.Set(AlarmType.RtcWakeup, wakeUpAt, pendingIntent);
+        }
+>>>>>>> origin/master
     }
 }

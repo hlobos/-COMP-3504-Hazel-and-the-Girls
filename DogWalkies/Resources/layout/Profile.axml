@@ -60,7 +60,6 @@
 					android:textColor="#BAD1C9"
 					android:id="@+id/TextViewOwnerName" />
 				<EditText
-					android:text="Your Name"
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
 					android:layout_marginLeft="125dp"
@@ -150,7 +149,6 @@
 			android:layout_alignParentLeft="true"
 			android:id="@+id/TextViewBreed" />	 
 		<EditText
-			android:text="Sheltie"
 			android:textColor="#FFD9D9"
 			android:textSize="35dp"
 			android:layout_marginLeft="180dp"
@@ -181,7 +179,6 @@
 			android:layout_alignParentLeft="true"
 			android:id="@+id/TextViewAge" />
 		<EditText
-			android:text="2 years 2 months"
 			android:textColor="#FFD9D9"
 			android:textSize="35dp"
 			android:layout_marginLeft="180dp"
@@ -204,7 +201,7 @@
 		android:background="#152B2F"
 		android:id="@+id/RelativeLayoutDogProfile">
 		<TextView
-			android:text="Birthday:"
+			android:text="Birthdate:"
 			android:textColor="#BAD1C9"
 			android:textSize="35dp"
 			android:layout_width="wrap_content"
@@ -212,7 +209,6 @@
 			android:layout_alignParentLeft="true"
 			android:id="@+id/TextViewBirthdate" />
 		<EditText
-			android:text="Sept 30th, 2013"
 			android:textColor="#FFD9D9"
 			android:textSize="35dp"
 			android:layout_marginLeft="180dp"
@@ -243,7 +239,6 @@
 			android:layout_alignParentLeft="true"
 			android:id="@+id/TextViewColor" />
 		<EditText
-			android:text="Sable and White"
 			android:textColor="#FFD9D9"
 			android:textSize="35dp"
 			android:layout_marginLeft="180dp"
@@ -274,7 +269,6 @@
 			android:layout_alignParentLeft="true"
 			android:id="@+id/TextViewGender" />
 		<EditText
-			android:text="Male"
 			android:textColor="#FFD9D9"
 			android:textSize="35dp"
 			android:layout_marginLeft="180dp"
@@ -305,7 +299,6 @@
 			android:layout_alignParentLeft="true"
 			android:id="@+id/TextViewMicrochip" />
 		<EditText
-			android:text="22B2S23"
 			android:textColor="#FFD9D9"
 			android:textSize="35dp"
 			android:layout_marginLeft="180dp"

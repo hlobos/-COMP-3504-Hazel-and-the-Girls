@@ -7,6 +7,7 @@ using Android.Graphics;
 using Android.Graphics.Drawables;
 using DogWalkies.Interface;
 using Android.Content;
+using System.Globalization;
 
 namespace DogWalkies
 {
@@ -31,12 +32,12 @@ namespace DogWalkies
         private Button ButtonYear;
         private Button ButtonWalkReminderDay;
         private Button ButtonWalkReminderTime;
+        private ImageButton ImageButtonEditNotes;
         private TextView _dateDisplayDay;
         private TextView _dateDisplayTime;
         private int hour;
         private int minute;
        
-
         const int TIME_DIALOG_ID = 0;
 
         private DogAccessLayer dataDogAccess = DogAccessLayer.getInstance();
@@ -56,15 +57,6 @@ namespace DogWalkies
             initializeFontStyle();
             initializeDogProfileImage();
             initializeClickEvents();
-
-            _dateDisplayDay = FindViewById<TextView>(Resource.Id.TextViewReminderData);
-            _dateDisplayTime = FindViewById<TextView>(Resource.Id.TextViewReminderTimeData);
-
-            ButtonWalkReminderTime.Click += (o, e) => ShowDialog(TIME_DIALOG_ID);
-
-            hour = DateTime.Now.Hour;
-            minute = DateTime.Now.Minute;
-            
         }
 
         private void loadViews()
@@ -86,59 +78,10 @@ namespace DogWalkies
             ButtonYear = FindViewById<Button>(Resource.Id.ButtonYear);
             ButtonWalkReminderDay = FindViewById<Button>(Resource.Id.ButtonWalkReminderDay);
             ButtonWalkReminderTime = FindViewById<Button>(Resource.Id.ButtonWalkReminderTime);
+            ImageButtonEditNotes = FindViewById<ImageButton>(Resource.Id.ImageButtonEditNotes);
             RelativeLayoutDogProfileImage = FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutDogProfileImage);
-        }
-
-        private void initializeClickEvents()
-        {
-            ButtonWalkReminderDay.Click += ButtonWalkReminderDay_Click;
-        }
-
-        private void updateDisplay()
-        {
-  
-            string time = string.Format("{0}:{1}", hour, minute.ToString().PadLeft(2, '0'));
-            _dateDisplayTime.Text = time;
-        }
-
-        public void ButtonWalkReminderDay_Click(object sender, EventArgs e)
-        {
-            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
-            { 
-
-                _dateDisplayDay.Text = time.ToLongDateString();
-
-          
-            });
-                frag.Show(FragmentManager, DatePickerFragment.TAG);
-            
-
-            //updateDatabaseAndSetDogWalkReminder();
-        }
-
-        private void updateDatabaseAndSetDogWalkReminder(string dateOrTime, DateTime time)
-        {
-            //Grab the Date and Time from EditViews
-            if (dateOrTime == "date")
-            {
-                //grab the Day/Month/Year
-            }
-            else if (dateOrTime == "time") {
-                //grab the Hour/Minute
-            }
-
-            //Create a new dateTime
-
-            //Update the WalkReminder DateTime in the database to this new value
-
-            //setReminder();
-        }
-
-        private void TimePickerCallback(object sender, TimePickerDialog.TimeSetEventArgs e)
-        {
-            hour = e.HourOfDay;
-            minute = e.Minute;
-            updateDisplay();
+            _dateDisplayDay = FindViewById<TextView>(Resource.Id.TextViewReminderData);
+            _dateDisplayTime = FindViewById<TextView>(Resource.Id.TextViewReminderTimeData);
         }
 
         private void initializeFontStyle()
@@ -174,6 +117,78 @@ namespace DogWalkies
             RelativeLayoutDogProfileImage.SetBackgroundDrawable(bitmapDrawable);
         }
 
+        private void initializeClickEvents()
+        {
+            ButtonWalkReminderDay.Click += ButtonWalkReminderDay_Click;
+            ButtonWalkReminderTime.Click += (o, e) => ShowDialog(TIME_DIALOG_ID);
+            ImageButtonEditNotes.Click += ImageButtonEditNotes_Click;
+            ButtonWeek.Click += ButtonWeek_Click;
+            ButtonMonth.Click += ButtonMonth_Click;
+            ButtonYear.Click += ButtonYear_Click;
+
+            hour = DateTime.Now.Hour;
+            minute = DateTime.Now.Minute;
+        }
+
+        private void ImageButtonEditNotes_Click(object sender, EventArgs e)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog editNotesDialog = builder.Create();
+            editNotesDialog.SetTitle("Edit Notes:");
+            editNotesDialog.SetMessage("Sorry! This feature is not quite ready, thank you for your patience.");
+            editNotesDialog.Show();
+        }
+
+        private void ButtonWeek_Click(object sender, EventArgs e)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog weekDialog = builder.Create();
+            weekDialog.SetMessage("Sorry! This feature is not quite ready, thank you for your patience.");
+            weekDialog.Show();
+        }
+
+        private void ButtonMonth_Click(object sender, EventArgs e)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog monthDialog = builder.Create();
+            monthDialog.SetMessage("Sorry! This feature is not quite ready, thank you for your patience.");
+            monthDialog.Show();
+        }
+
+        private void ButtonYear_Click(object sender, EventArgs e)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog yearDialog = builder.Create();
+            yearDialog.SetMessage("Sorry! This feature is not quite ready, thank you for your patience.");
+            yearDialog.Show();
+        }
+
+        public void ButtonWalkReminderDay_Click(object sender, EventArgs e)
+        {
+            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+            { 
+                _dateDisplayDay.Text = time.ToString("MMMM") + " " + time.Day.ToString() + ", " + time.Year.ToString();
+            });
+                frag.Show(FragmentManager, DatePickerFragment.TAG);
+            
+            //updateDatabaseAndSetDogWalkReminder();
+        }
+
+        private void TimePickerCallback(object sender, TimePickerDialog.TimeSetEventArgs e)
+        {
+            hour = e.HourOfDay;
+            minute = e.Minute;
+            updateDisplay();
+        }
+
+        private void updateDisplay()
+        {
+            TimeSpan timeSpan = new TimeSpan(hour, minute, 0);
+            DateTime dateTime = new DateTime(timeSpan.Ticks); // Date part is 01-01-0001
+            string formattedTime = dateTime.ToString("h:mm tt", CultureInfo.InvariantCulture);
+            _dateDisplayTime.Text = formattedTime;
+        }
+
         protected override Dialog OnCreateDialog(int id)
         {
             if (id == TIME_DIALOG_ID)
@@ -182,6 +197,24 @@ namespace DogWalkies
             return null;
         }
 
+        private void updateDatabaseAndSetDogWalkReminder(string dateOrTime, DateTime time)
+        {
+            //Grab the Date and Time from EditViews
+            if (dateOrTime == "date")
+            {
+                //grab the Day/Month/Year
+            }
+            else if (dateOrTime == "time")
+            {
+                //grab the Hour/Minute
+            }
+
+            //Create a new dateTime
+
+            //Update the WalkReminder DateTime in the database to this new value
+
+            //setReminder();
+        }
 
         private void setReminder() {
             dog = dataDogAccess.getDogByID(0);

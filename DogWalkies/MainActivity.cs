@@ -42,7 +42,7 @@ namespace DogWalkies
 
             loadViews();
             initializeFontStyle();
-            initializeDogProfileImage();
+            initializeDogProfileImageAndName();
             initializeClickEvents();
         }
 
@@ -50,9 +50,10 @@ namespace DogWalkies
         {
             base.OnResume();
 
-            //Refresh the dog profile image, it may have been changed via ProfileView Activity
+            //Refresh the dog profile image and name, it may have been changed via ProfileView Activity
             dog = dataDogAccess.getDogByID(0);
             ImageViewDogProfile.SetImageBitmap(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
+            TextViewDogFirstName.Text = dog.FirstName;
         }
 
         private void loadViews()
@@ -65,7 +66,7 @@ namespace DogWalkies
             ImageButtonCamera = FindViewById<ImageButton>(Resource.Id.ImageButtonCamera);
         }
 
-        private void initializeDogProfileImage()
+        private void initializeDogProfileImageAndName()
         {
             if (dataDogAccess.isDogTableEmpty())
             {
@@ -77,6 +78,7 @@ namespace DogWalkies
 
             //Set the ImageView for the dog profile image
             ImageViewDogProfile.SetImageBitmap(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
+            TextViewDogFirstName.Text = dog.FirstName;
         }
 
         private void CreateDirectoryForPictures()
@@ -206,7 +208,11 @@ namespace DogWalkies
 
         private void ButtonStartWalk_Click(object sender, EventArgs e)
         {
-            //Start Walk
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog startWalkDialog = builder.Create();
+            startWalkDialog.SetTitle("Walk Time!");
+            startWalkDialog.SetMessage("Let's take a picture before starting your journey." + "\n\n" + "Sorry! This feature is not quite ready, thank you for your patience.");
+            startWalkDialog.Show();
         }
 
         private void ButtonProfile_Click(object sender, EventArgs e)

@@ -15,9 +15,11 @@ namespace DogWalkies
     [Activity(Label = "ProfileActivity", Theme = "@android:style/Theme.Material.Light.NoActionBar")]
     public class ProfileActivity : Activity
     {
-        private TextView TextViewDogFirstName;
+    
         private TextView TextViewOwnerName;
         private EditText EditTextOwnerNameData;
+        private TextView TextViewName;
+        private EditText EditTextNameData;
         private TextView TextViewBreed;
         private EditText EditTextBreedData;
         private TextView TextViewAge;
@@ -66,9 +68,10 @@ namespace DogWalkies
         
         private void loadViews()
         {
-            TextViewDogFirstName = FindViewById<TextView>(Resource.Id.TextViewDogFirstName);
             TextViewOwnerName = FindViewById<TextView>(Resource.Id.TextViewOwnerName);
             EditTextOwnerNameData = FindViewById<EditText>(Resource.Id.EditTextOwnerNameData);
+            TextViewName = FindViewById<TextView>(Resource.Id.TextViewName);
+            EditTextNameData = FindViewById<EditText>(Resource.Id.EditTextNameData);
             TextViewBreed = FindViewById<TextView>(Resource.Id.TextViewBreed);
             EditTextBreedData = FindViewById<EditText>(Resource.Id.EditTextBreedData);
             TextViewAge = FindViewById<TextView>(Resource.Id.TextViewAge);
@@ -91,9 +94,10 @@ namespace DogWalkies
         private void initializeFontStyle()
         {
             Typeface centuryGothic = Typeface.CreateFromAsset(Assets, "centuryGothic.ttf");
-            TextViewDogFirstName.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             TextViewOwnerName.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             EditTextOwnerNameData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            TextViewName.SetTypeface(centuryGothic, TypefaceStyle.Normal);
+            EditTextNameData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             TextViewBreed.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             EditTextBreedData.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             TextViewAge.SetTypeface(centuryGothic, TypefaceStyle.Normal);
@@ -132,6 +136,7 @@ namespace DogWalkies
         {
            
             EditTextOwnerNameData.Text = dog.OwnerName;
+            EditTextNameData.Text = dog.FirstName;
             EditTextBreedData.Text = dog.Breed;
             EditTextAgeData.Text = dog.Age;
             EditTextBirthdateData.Text = dog.Birthdate;
@@ -165,15 +170,16 @@ namespace DogWalkies
 
         private void DisplayAlertDialog(object sender, EventArgs e)
         {
-           
-            Android.App.AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
             AlertDialog alertDialog = builder.Create();
             alertDialog.SetTitle("Confirmation");
-            alertDialog.SetMessage("Are you sure to change your dog profile?");
+            alertDialog.SetMessage("Would you like to save all the Profile information?");
             alertDialog.SetButton("YES", (s,ev)=>
             {
                 //save new information
                 
+                dog.FirstName = EditTextNameData.Text;
                 dog.OwnerName = EditTextOwnerNameData.Text;
                 dog.Breed = EditTextBreedData.Text;
                 dog.Age = EditTextAgeData.Text;
@@ -184,7 +190,7 @@ namespace DogWalkies
 
 
                 dataDogAccess.updateDog(dog);
-                Toast.MakeText(this, "saved", ToastLength.Short).Show();
+                Toast.MakeText(this, "Dog Profile Information Saved", ToastLength.Short).Show();
 
             });
 
@@ -196,7 +202,6 @@ namespace DogWalkies
             });
 
             alertDialog.Show();
-
 
         }
 

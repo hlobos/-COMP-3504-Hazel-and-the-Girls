@@ -159,23 +159,26 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050014
 			public const int ButtonYear = 2131034132;
 			
-			// aapt resource value: 0x7f050038
-			public const int EditTextAgeData = 2131034168;
-			
 			// aapt resource value: 0x7f05003a
-			public const int EditTextBirthdateData = 2131034170;
-			
-			// aapt resource value: 0x7f050036
-			public const int EditTextBreedData = 2131034166;
+			public const int EditTextAgeData = 2131034170;
 			
 			// aapt resource value: 0x7f05003c
-			public const int EditTextColorData = 2131034172;
+			public const int EditTextBirthdateData = 2131034172;
+			
+			// aapt resource value: 0x7f050038
+			public const int EditTextBreedData = 2131034168;
 			
 			// aapt resource value: 0x7f05003e
-			public const int EditTextGenderData = 2131034174;
+			public const int EditTextColorData = 2131034174;
 			
 			// aapt resource value: 0x7f050040
-			public const int EditTextMicrochipData = 2131034176;
+			public const int EditTextGenderData = 2131034176;
+			
+			// aapt resource value: 0x7f050042
+			public const int EditTextMicrochipData = 2131034178;
+			
+			// aapt resource value: 0x7f050036
+			public const int EditTextNameData = 2131034166;
 			
 			// aapt resource value: 0x7f050030
 			public const int EditTextOwnerNameData = 2131034160;
@@ -190,7 +193,7 @@ namespace DogWalkies
 			public const int ImageButtonEditDogprofile = 2131034161;
 			
 			// aapt resource value: 0x7f05002d
-			public const int ImageButtonEditIcon = 2131034157;
+			public const int ImageButtonEditNotes = 2131034157;
 			
 			// aapt resource value: 0x7f050015
 			public const int ImageViewChart = 2131034133;
@@ -258,26 +261,26 @@ namespace DogWalkies
 			// aapt resource value: 0x7f05000e
 			public const int RelatvieLayoutDogNameBar = 2131034126;
 			
-			// aapt resource value: 0x7f050037
-			public const int TextViewAge = 2131034167;
-			
 			// aapt resource value: 0x7f050039
-			public const int TextViewBirthdate = 2131034169;
+			public const int TextViewAge = 2131034169;
+			
+			// aapt resource value: 0x7f05003b
+			public const int TextViewBirthdate = 2131034171;
 			
 			// aapt resource value: 0x7f050018
 			public const int TextViewBorderTopHack = 2131034136;
 			
-			// aapt resource value: 0x7f050035
-			public const int TextViewBreed = 2131034165;
+			// aapt resource value: 0x7f050037
+			public const int TextViewBreed = 2131034167;
 			
-			// aapt resource value: 0x7f05003b
-			public const int TextViewColor = 2131034171;
+			// aapt resource value: 0x7f05003d
+			public const int TextViewColor = 2131034173;
 			
 			// aapt resource value: 0x7f050003
 			public const int TextViewDogFirstName = 2131034115;
 			
-			// aapt resource value: 0x7f05003d
-			public const int TextViewGender = 2131034173;
+			// aapt resource value: 0x7f05003f
+			public const int TextViewGender = 2131034175;
 			
 			// aapt resource value: 0x7f050020
 			public const int TextViewLastWalked = 2131034144;
@@ -285,8 +288,11 @@ namespace DogWalkies
 			// aapt resource value: 0x7f050021
 			public const int TextViewLastWalkedData = 2131034145;
 			
-			// aapt resource value: 0x7f05003f
-			public const int TextViewMicrochip = 2131034175;
+			// aapt resource value: 0x7f050041
+			public const int TextViewMicrochip = 2131034177;
+			
+			// aapt resource value: 0x7f050035
+			public const int TextViewName = 2131034165;
 			
 			// aapt resource value: 0x7f05002b
 			public const int TextViewNotes = 2131034155;

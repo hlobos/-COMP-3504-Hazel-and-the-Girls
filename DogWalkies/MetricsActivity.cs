@@ -55,7 +55,7 @@ namespace DogWalkies
 
             loadViews();
             initializeFontStyle();
-            initializeDogProfileImage();
+            initializeDogProfileImageAndMetricsData();
             initializeClickEvents();
         }
 
@@ -105,16 +105,27 @@ namespace DogWalkies
             ButtonYear.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonWalkReminderDay.SetTypeface(centuryGothic, TypefaceStyle.Normal);
             ButtonWalkReminderTime.SetTypeface(centuryGothic, TypefaceStyle.Normal);
-
         }
 
-        private void initializeDogProfileImage()
+        private void initializeDogProfileImageAndMetricsData()
         {
             dog = dataDogAccess.getDogByID(0);
 
             //Set the ImageView for the dog profile image
             var bitmapDrawable = new BitmapDrawable(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
             RelativeLayoutDogProfileImage.SetBackgroundDrawable(bitmapDrawable);
+
+            //Set WalkTime Reminder Date and Time
+            DateTime initializeDateTime = dog.WalkReminder;
+            if (initializeDateTime.Year == 1)
+            {
+                _dateDisplayDay.Text = "Not Set";
+            }
+            else {
+                _dateDisplayDay.Text = initializeDateTime.ToString("MMMM") + " " + initializeDateTime.Day.ToString() + ", " + initializeDateTime.Year.ToString();
+            }
+
+            _dateDisplayTime.Text = initializeDateTime.ToString("h:mm tt", CultureInfo.InvariantCulture); ;
         }
 
         private void initializeClickEvents()
@@ -165,13 +176,14 @@ namespace DogWalkies
 
         public void ButtonWalkReminderDay_Click(object sender, EventArgs e)
         {
-            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+
+            DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime timeDayMonthYearOnly)
             { 
-                _dateDisplayDay.Text = time.ToString("MMMM") + " " + time.Day.ToString() + ", " + time.Year.ToString();
+                _dateDisplayDay.Text = timeDayMonthYearOnly.ToString("MMMM") + " " + timeDayMonthYearOnly.Day.ToString() + ", " + timeDayMonthYearOnly.Year.ToString();
+                updateDatabaseAndSetDogWalkReminder("date", timeDayMonthYearOnly);                
             });
-                frag.Show(FragmentManager, DatePickerFragment.TAG);
-            
-            //updateDatabaseAndSetDogWalkReminder();
+
+            frag.Show(FragmentManager, DatePickerFragment.TAG);
         }
 
         private void TimePickerCallback(object sender, TimePickerDialog.TimeSetEventArgs e)
@@ -184,9 +196,10 @@ namespace DogWalkies
         private void updateDisplay()
         {
             TimeSpan timeSpan = new TimeSpan(hour, minute, 0);
-            DateTime dateTime = new DateTime(timeSpan.Ticks); // Date part is 01-01-0001
-            string formattedTime = dateTime.ToString("h:mm tt", CultureInfo.InvariantCulture);
+            DateTime timeHourMinuteOnly = new DateTime(timeSpan.Ticks); // Date part is 01-01-0001
+            string formattedTime = timeHourMinuteOnly.ToString("h:mm tt", CultureInfo.InvariantCulture);
             _dateDisplayTime.Text = formattedTime;
+            updateDatabaseAndSetDogWalkReminder("time", timeHourMinuteOnly);
         }
 
         protected override Dialog OnCreateDialog(int id)
@@ -197,32 +210,66 @@ namespace DogWalkies
             return null;
         }
 
-        private void updateDatabaseAndSetDogWalkReminder(string dateOrTime, DateTime time)
+        private void updateDatabaseAndSetDogWalkReminder(string dateOrTime, DateTime dateTimeToSet)
         {
-            //Grab the Date and Time from EditViews
+            DateTime reminderDateTime;
+            int tempDay = 0;
+            int tempMonth = 0;
+            int tempYear = 0;
+            int temp24Hour = 0;
+            int tempMinute = 0;
+
+            dog = dataDogAccess.getDogByID(0);
+            reminderDateTime = dog.WalkReminder;
+
             if (dateOrTime == "date")
             {
-                //grab the Day/Month/Year
+                //grab the Day/Month/Year of dateTimeToSet
+                tempDay = dateTimeToSet.Day;
+                tempMonth = dateTimeToSet.Month;
+                tempYear = dateTimeToSet.Year;
+
+                if (TextViewReminderTimeData.Text != null) {
+                    temp24Hour = reminderDateTime.Hour;
+                    tempMinute = reminderDateTime.Minute;
+                }
             }
             else if (dateOrTime == "time")
             {
-                //grab the Hour/Minute
+                //grab the Hour/Minute of dateTimeToSet
+                temp24Hour = dateTimeToSet.Hour;
+                tempMinute = dateTimeToSet.Minute;
+
+                if (TextViewReminderData.Text != null)
+                {
+                    tempDay = reminderDateTime.Day;
+                    tempMonth = reminderDateTime.Month;
+                    tempYear = reminderDateTime.Year;
+                }
             }
 
-            //Create a new dateTime
+            reminderDateTime = new DateTime(tempYear, tempMonth, tempDay, temp24Hour, tempMinute, 0, DateTimeKind.Utc);
+            dog.WalkReminder = reminderDateTime;
+            dataDogAccess.updateDog(dog);
 
-            //Update the WalkReminder DateTime in the database to this new value
+            setReminder();
 
-            //setReminder();
+            Toast.MakeText(this, "Walk Reminder has been Updated!", ToastLength.Short).Show();
         }
 
         private void setReminder() {
             dog = dataDogAccess.getDogByID(0);
 
             DateTime date = dog.WalkReminder;
-            TimeSpan span = (date - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc));
 
-            long wakeUpAt = (long)span.TotalMilliseconds;
+            //AlarmManager takes a value of type "long" that represents the time, in milliseconds, to trigger the alarm
+            //Two types of times: 
+            //  Elapsed time --> number of milliseconds since boot time
+            //  "Real Time Clock (RTC)" --> RTC time is the actual time expressed as UTC time
+            //And the time AlarmManager refers to is from EPOCH (Unix)
+            //Below, we convert a local DateTime to AlarmManager milliseconds
+            var timeDifference = new DateTime(1970, 1, 1) - DateTime.MinValue;
+            var wakeUpAt = date.ToUniversalTime().AddSeconds(-timeDifference.TotalSeconds).Ticks / 10000;
 
             NotificationPublisher publisher = new NotificationPublisher();
 

@@ -46,9 +46,6 @@ namespace DogWalkies
 
         private int REQUEST_PICK_IMAGE = 1;
         
-
-
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -64,8 +61,7 @@ namespace DogWalkies
             initializeClickEvents();
             initializeTextViewData();
         }
-
-        
+      
         private void loadViews()
         {
             TextViewOwnerName = FindViewById<TextView>(Resource.Id.TextViewOwnerName);
@@ -131,7 +127,6 @@ namespace DogWalkies
             ImageButtonEditDogprofile.Click += DisplayAlertDialog;
         }
 
-
         private void initializeTextViewData()
         {
            
@@ -144,7 +139,6 @@ namespace DogWalkies
             EditTextGenderData.Text = dog.Gender;
             EditTextMicrochipData.Text = dog.Microchip;
         }
-
 
         private void ButtonMetrics_Click(object sender, EventArgs e)
         {
@@ -177,8 +171,7 @@ namespace DogWalkies
             alertDialog.SetMessage("Would you like to save all the Profile information?");
             alertDialog.SetButton("YES", (s,ev)=>
             {
-                //save new information
-                
+                //Save new information               
                 dog.FirstName = EditTextNameData.Text;
                 dog.OwnerName = EditTextOwnerNameData.Text;
                 dog.Breed = EditTextBreedData.Text;
@@ -188,7 +181,6 @@ namespace DogWalkies
                 dog.Gender = EditTextGenderData.Text;
                 dog.Microchip = EditTextMicrochipData.Text;
 
-
                 dataDogAccess.updateDog(dog);
                 Toast.MakeText(this, "Dog Profile Information Saved", ToastLength.Short).Show();
 
@@ -196,16 +188,13 @@ namespace DogWalkies
 
             alertDialog.SetButton2("NO", (s,ev)=>
             {
-                // restore default dog information
-                initializeTextViewData();
-                
+                // Restore default dog information
+                initializeTextViewData();    
             });
 
             alertDialog.Show();
-
         }
-
-        
+      
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
@@ -226,8 +215,6 @@ namespace DogWalkies
             }
         }
 
-        
-
         private void UpdateDogProfileImageFromIntentData(Intent data)
         {
             //Uri --> Bitmap
@@ -247,7 +234,5 @@ namespace DogWalkies
             var bitmapDrawable = new BitmapDrawable(BitmapFactory.DecodeByteArray(dog.ProfileImage, 0, dog.ProfileImage.Length));
             RelativeLayoutDogProfileImage.SetBackgroundDrawable(bitmapDrawable);
         }
-
-
-        }
+    }
 }
